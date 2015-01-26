@@ -1,0 +1,30 @@
+
+#splatvas {
+    display: block;
+    background-image: url('slimybg.png');
+    width: 500px; height: 500px;
+    margin: 50px auto 10px auto;
+}
+
+body {
+    margin: 0;
+    background-repeat: space;
+    background-color: #222;
+}
+
+img {
+    display: none;
+}
+textarea {
+    margin: 20px;
+    resize: none;
+}
+
+.show {
+    display: inline;
+}
+
+center {
+    background-color: #fff;
+    padding: 30px;
+}
