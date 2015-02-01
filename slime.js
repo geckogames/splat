@@ -15,5 +15,6 @@ var SlimeBasic = function (x, y) {
     this.enemy = true;
     this.solid = false;
     this.update = function () {
-        this.x ++;};
+        this.x += (game.gos.objects[0].x > this.x) ? 1 : -1;
+    };
 };
