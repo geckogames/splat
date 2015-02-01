@@ -9,12 +9,16 @@ var SlimeBasic = function (x, y) {
     this.name = "SLIME_OBJECT";
     this.x = x;
     this.y = y;
+    this.truex = x;
     this.image = document.querySelector("#basic_slime");
     this.w = 128;
     this.h = 128;
     this.enemy = true;
     this.solid = false;
+    this.SPEED = 2;
     this.update = function () {
-        this.x += (game.gos.objects[0].x > this.x) ? 1 : -1;
+        var pos = slimelogic.movetowardsplayer(game.gos.objects[0].x, this.x, this.truex, this.SPEED);
+        this.x = pos.x;
+        this.truex = pos.truex;
     };
 };
