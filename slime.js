@@ -14,5 +14,6 @@ var SlimeBasic = function (x, y) {
     this.h = 128;
     this.enemy = true;
     this.solid = false;
-    this.update = function () {};
+    this.update = function () {
+        this.x ++;};
 };
