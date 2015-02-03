@@ -6,5 +6,5 @@
     And, we hope you have fun!
 */
 var gmp_alpha = function () {
-    this.name = "Splat GMP_ALPHA Engine";
-};
+    this.name = "Splat GMP_ALPHA Engine"
+}

@@ -6,9 +6,9 @@
     And, we hope you have fun!
 */
 var gos_alpha = function () {
-    this.name = "Splat GOS_ALPHA Engine";
-    this.objects = [];
+    this.name = "Splat GOS_ALPHA Engine"
+    this.objects = []
     this.loadLevel = function (objects) {
-        this.objects = objects;
-    };
-};
+        this.objects = objects
+    }
+}
