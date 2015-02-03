@@ -6,5 +6,5 @@
     And, we hope you have fun!
 */
 var gie_alpha = function () {
-    this.name = "Splat GIE_ALPHA Engine";
-};
+    this.name = "Splat GIE_ALPHA Engine"
+}
