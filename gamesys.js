@@ -33,9 +33,18 @@ screens[1] = {
             logcon("Loading Level: " + game.levels[game.level].name);
             game.gos.loadLevel(game.levels[game.level].objects);
         }
-        for(var i = 0; i < game.gos.objects.length; i++) {
-            game.gos.objects[i].update(game.gos, this.ticks);
-            ctx.drawImage(game.gos.objects[i].image, game.gos.objects[i].x, game.gos.objects[i].y);
+        if(dev) {
+            game.gos.objects[0].update(game.gos, this.ticks);
+            for(var i = 1; i < game.gos.objects.length; i++) {
+                game.gos.objects[i].update(game.gos, this.ticks);
+                ctx.drawImage(game.gos.objects[i].image, game.gos.objects[i].x - game.gos.objects[0].x + 200, game.gos.objects[i].y);
+            }
+            ctx.drawImage(game.gos.objects[0].image, 200, game.gos.objects[0].y);
+        } else {
+            for(var i = 0; i < game.gos.objects.length; i++) {
+                game.gos.objects[i].update(game.gos, this.ticks);
+                ctx.drawImage(game.gos.objects[i].image, game.gos.objects[i].x, game.gos.objects[i].y);
+            }
         }
     }
 };
