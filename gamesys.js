@@ -24,16 +24,16 @@ screens[1] = {
     name: "GAME_SCREEN",
     ticks: 0,
     update: function () {
-        if(this.ticks === 0) {
+        if (this.ticks === 0) {
             game = new SplatGame(new gmp_alpha(), new gos_alpha(), new gie_alpha());
         }
-        this.ticks++;
-        if(game.loadLevel) {
+        this.ticks;
+        if (game.loadLevel) {
             game.loadLevel = false;
             logcon("Loading Level: " + game.levels[game.level].name);
             game.gos.loadLevel(game.levels[game.level].objects);
         }
-        for(var i = 0; i < game.gos.objects.length; i++) {
+        for (var i = 0; i < game.gos.objects.length; i++) {
             game.gos.objects[i].update(game.gos, this.ticks);
             ctx.drawImage(game.gos.objects[i].image, game.gos.objects[i].x, game.gos.objects[i].y);
         }
