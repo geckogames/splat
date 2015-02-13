@@ -8,6 +8,7 @@ var level_basic = function () {
         new SlimeLearning(256, 500 - 128),
         new SlimeMutant(400, 500 - 128),
         new SlimePepper(300, 500 - 128)
+        new SlimeHutt(64, 500-128)
     ];
     this.floor = [];
     for(var i = 0; i < 500; i++) {
