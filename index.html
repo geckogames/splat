@@ -2,43 +2,43 @@
 <html>
     <head>
         <title>Splat!</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="keybind.js"></script>
-        <script src="splat.js"></script>
-        <script src="player.js"></script>
-        <script src="slimelogic.js"></script>
-        <script src="slime.js"></script>
-        <script src="learningslime.js"></script>
-        <script src="bush.js"></script>
-        <script src="bush2.js"></script>
-        <script src="Tree.js"></script>
-        <script src="mutantslime.js"></script>
-        <script src="hutt-slime.js"></script>
-        <script src="pepperslime.js"></script>
-        <script src="gos_alpha.js"></script>
-        <script src="gie_alpha.js"></script>
-        <script src="gmp_alpha.js"></script>
-        <script src="levels.js"></script>
-        <script src="gamesys.js"></script>
+        <link rel="stylesheet" href="src/style.css">
+        <script src="src/js/keybind.js"></script>
+        <script src="src/js/splat.js"></script>
+        <script src="src/js/obj/player.js"></script>
+        <script src="src/js/slimelogic.js"></script>
+        <script src="src/js/obj/slime.js"></script>
+        <script src="src/js/obj/learningslime.js"></script>
+        <script src="src/js/obj/bush.js"></script>
+        <script src="src/js/obj/bush2.js"></script>
+        <script src="src/js/obj/Tree.js"></script>
+        <script src="src/js/obj/mutantslime.js"></script>
+        <script src="src/js/obj/hutt-slime.js"></script>
+        <script src="src/js/obj/pepperslime.js"></script>
+        <script src="src/js/engines/gos_alpha.js"></script>
+        <script src="src/js/engines/gie_alpha.js"></script>
+        <script src="src/js/engines/gmp_alpha.js"></script>
+        <script src="src/js/levels.js"></script>
+        <script src="src/js/gamesys.js"></script>
     </head>
     <body>
-        <audio id="makeway" src="sfx/makeway.wav" preload="auto"></audio>
-        <audio id="carnivalloader" src="music/carnivalloader.mp3" preload="auto"></audio>
-        <audio id="percussionparadise" src="music/percpara.mp3" preload="auto"></audio>
-        <img id="errorbox" src="error.png">
-        <img id="credits" src="credits.png">
-        <img id="logo" src="logo.png">
-        <img id="startico" src="startico.png">
-        <img id="credico" src="creditsbutton.png">
-        <img id="basic_slime" src="slimy.png">
-        <img id="learning_slime" src="learningslimy.png">
-        <img id="mutant_slime" src="mutantslimy.png">
-        <img id="pepper_slime" src="pepperslime.png">
-        <img id="hutt-slime" src="hutt-slime.png">
-        <img id="guy" src="player_newspaper.png">
-        <img id="bush" src="bush.png">
-        <img id="bush2" src="bush2.png">
-        <img id="tree" src="tree.png">
+        <audio id="makeway" src="aud.sfx/makeway.wav" preload="auto"></audio>
+        <audio id="carnivalloader" src="aud/music/carnivalloader.mp3" preload="auto"></audio>
+        <audio id="percussionparadise" src="aud/music/percpara.mp3" preload="auto"></audio>
+        <img id="errorbox" src="img/error.png">
+        <img id="credits" src="img/credits.png">
+        <img id="logo" src="img/logo.png">
+        <img id="startico" src="img/startico.png">
+        <img id="credico" src="img/creditsbutton.png">
+        <img id="basic_slime" src="img/obj/slimy.png">
+        <img id="learning_slime" src="img/obj/learningslimy.png">
+        <img id="mutant_slime" src="img/obj/mutantslimy.png">
+        <img id="pepper_slime" src="img/obj/pepperslime.png">
+        <img id="hutt-slime" src="img/obj/hutt-slime.png">
+        <img id="guy" src="img/obj/player_newspaper.png">
+        <img id="bush" src="img/obj/bush.png">
+        <img id="bush2" src="img/obj/bush2.png">
+        <img id="tree" src="img/obj/tree.png">
         <canvas id="splatvas" width="500" height="500"></canvas>
         <center>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="show" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">SPLAT!</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">GeckoGames</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
