@@ -10,13 +10,11 @@ var Bush = function (x, y) {
     this.x = x;
     this.y = y;
     this.truex = x;
-    this.image = document.querySelector("#Bush#");
+    this.image = document.querySelector("#Bush");
     this.w = 128;
     this.h = 128;
     this.enemy = false;
     this.solid = true;
     this.update = function () {
-        this.x = pos.x;
-        this.truex = pos.truex;
     };
 };
