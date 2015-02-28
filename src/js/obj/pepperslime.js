@@ -17,8 +17,8 @@ var SlimePepper = function (x, y) {
     this.solid = true
     this.SPEED = 2.7
     this.update = function () {
-        var pos = slimelogic.movetowardsplayer(game.gos.objects[0].x, this.x, this.truex, this.SPEED)
-        this.x = pos.x
-        this.truex = pos.truex
+        //var pos = slimelogic.movetowardsplayer(game.gos.objects[0].x, this.x, this.truex, this.SPEED)
+        //this.x = pos.x
+        //this.truex = pos.truex
     }
 }
