@@ -5,7 +5,7 @@
 
     And, we hope you have fun!
 */
-var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = false
+var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true
 
 // Zoneclick - Check wether a click happened within a zone on the screen.
 var zoneclick = function (zonex, zoney, width, height, clickx, clicky) {
@@ -151,7 +151,7 @@ window.onload = function () {
                 document.querySelector("#" + screens[screenid].music).play()
             }
         }
-    }, 1)
+    }, 50)
     cv.onmouseup = function (e) {
         if(screens[screenid].mouseup) {
             screens[screenid].mouseup(e.clientX - cvleft, e.clientY - cvtop)
