@@ -151,7 +151,7 @@ window.onload = function () {
                 document.querySelector("#" + screens[screenid].music).play()
             }
         }
-    }, 50)
+    }, 9)
     cv.onmouseup = function (e) {
         if(screens[screenid].mouseup) {
             screens[screenid].mouseup(e.clientX - cvleft, e.clientY - cvtop)
