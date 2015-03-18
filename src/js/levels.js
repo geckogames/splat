@@ -5,9 +5,9 @@ var level_basic = function () {
     this.objects = [
         new Player(0, 500 - 128),
         new SlimeBasic(128, 500 - 128),
-        new SlimeLearning(256, 500 - 128),
-        new SlimeMutant(400, 500 - 128),
-        new SlimePepper(300, 500 - 128),
+        new SlimeLearning(400, 500 - 128),
+        new SlimeMutant(700, 500 - 128),
+        new SlimePepper(650, 500 - 128),
         //new Bush(64, 500 - 128),
         //new Bush2(175, 500 - 128),
         //new Bush(450, 500 - 128),

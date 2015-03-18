@@ -21,7 +21,7 @@ var SlimeMutant = function (x, y) {
         //var pos = slimelogic.movetowardsplayer(game.gos.objects[0].x, this.x, this.truex, this.SPEED)
         //this.x = pos.x
         //this.truex = pos.truex
-        var pm = slimelogic.path_movement(this.current_path_index, 120, 2, this.x);
+        var pm = slimelogic.path_movement(this.current_path_index, 350, 3, this.x);
         this.current_path_index = pm.new_index;
         this.x = pm.new_x;
     }
