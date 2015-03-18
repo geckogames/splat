@@ -22,6 +22,7 @@ var SplatGame = function (gmp, gos, gie) {
 var game
 screens[1] = {
     name: "GAME_SCREEN",
+    music: "splat_score",
     ticks: 0,
     update: function () {
         if(this.ticks === 0) {
