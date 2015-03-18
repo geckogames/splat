@@ -68,5 +68,10 @@ var Player = function (x, y) {
             this.y = leftlvl > rightlvl ? leftlvl : rightlvl
             this.n_jumps = 0
         }*/
+        if(this.x < 0) {
+            this.x = 0;
+        } else if(this.x > 2000 - 500) {
+            this.x = 2000 - 500;
+        }
     }
 }
