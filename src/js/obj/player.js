@@ -14,16 +14,16 @@ var Player = function (x, y) {
     this.h = 128
     this.velocity_y = 0
     this.velocity_x = 0
-    this.friction = 0.8
-    this.gravity = 0.6 // Gravitational constant for SplatLand's People
+    this.friction = 0.6
+    this.gravity = 0.2 // Gravitational constant for SplatLand's People
     this.jump_released = true // Whether or not jump key has been released since last jump
     this.n_jumps = 0 // Number of jumps executed without hitting the ground
     this.update = function (goe, ticks) {
         if(iskeydown(keybindings.RIGHT)) { // Move Right
-            this.velocity_x = 10
+            this.velocity_x = 5
         }
         if(iskeydown(keybindings.LEFT)) { // Move Left
-            this.velocity_x = -10
+            this.velocity_x = -5
         }
         if(this.velocity_x && this.y === 500 - 128) {
             this.velocity_x += (this.velocity_x > 0) ? -this.friction : this.friction
@@ -34,7 +34,7 @@ var Player = function (x, y) {
         if(Math.floor(this.velocity_x) === 0) this.velocity_x = 0;
         if(iskeydown(keybindings.JUMP) && this.jump_released && this.n_jumps < 2) { // If liable to jump (max double-jump)
             // Set to jump velocity
-            this.velocity_y = -10
+            this.velocity_y = -7
             // Record that the jump button was not released
             this.jump_released = false
             // Increment Number of Jumps (Max double-jump)
