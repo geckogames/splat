@@ -5,7 +5,7 @@
 
     And, we hope you have fun!
 */
-var Tree = function (x, y) {
+var Tree2 = function (x, y) {
     this.name = "TREE2_OBJECT"
     this.x = x
     this.y = y
