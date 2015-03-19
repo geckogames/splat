@@ -10,10 +10,11 @@ var level_basic = function () {
         new SlimeBasic(300, 500 - 128),
 		new SlimeBasic(900, 500 - 128),
 		new SlimeBasic(1300, 500 - 128),
-		//new Bush(64, 500 - 128),
+		new Bush(64, 500 - 128),
         //new Bush2(175, 500 - 128),
-        //new Bush(450, 500 - 128),
-        new Tree(430, 500 - 128)
+        new Bush(450, 500 - 128),
+        new Tree(430, 500 - 128),
+		new Bush(1400, 500 - 128)
     ];
     this.floor = [];
     for(var i = 0; i < 500; i++) {
