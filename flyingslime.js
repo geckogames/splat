@@ -24,8 +24,5 @@ var SlimeFlying = function (x, y) {
         //var pm = slimelogic.path_movement(this.current_path_index, 300, 2, this.x);
         //this.current_path_index = pm.new_index;
         //this.x = pm.new_x;
-		var pos = slimelogic.dash(game.gos.objects[0].x, this.x, this.truex, this.SPEED)
-        this.x = pos.x
-        this.truex = pos.truex
     }
 }
