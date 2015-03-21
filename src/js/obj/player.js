@@ -36,7 +36,7 @@ var Player = function (x, y) {
             // Set to jump velocity
             this.velocity_y = -7
             // Record that the jump button was not released
-            this.jump_released = false
+            this.jump_released = true
             // Increment Number of Jumps (Max double-jump)
             this.n_jumps++
         }
