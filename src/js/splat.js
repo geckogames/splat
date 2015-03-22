@@ -28,6 +28,9 @@ screens = [
             ctx.drawImage(document.querySelector("#credico"), 150, 330)
 			ctx.drawImage(document.querySelector("#learning_slime"), 150, 190)
             ctx.drawImage(document.querySelector("#basic_slime"), this.ticks * 2, 372)
+			ctx.drawImage(document.querySelector("#basic_slime"), this.ticks * 2.5, 372)
+			ctx.drawImage(document.querySelector("#basic_slime"), this.ticks * 3, 372)
+		    ctx.drawImage(document.querySelector("#basic_slime"), this.ticks * 3.5, 372)
 			ctx.drawImage(document.querySelector("#guy"), this.ticks * 5, 372)
         },
         mouseup: function (x, y) {
