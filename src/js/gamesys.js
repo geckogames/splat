@@ -12,7 +12,8 @@ var SplatGame = function (gmp, gos, gie) {
     this.level = 0
     this.loadLevel = true
     this.levels = [
-        new level_basic()
+        new level_basic(),
+        new level_2()
     ]
     logcon("Gameplay Initiated.")
     logcon("Game Intersection Engine: \"" + this.gie.name + "\"")
