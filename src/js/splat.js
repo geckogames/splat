@@ -149,6 +149,9 @@ window.onload = function () {
     ctx.font = "18px monospace"
     con = document.querySelector("#textarea")
     logcon("Splat! Initiated.")
+    // SING IT TO THE WORLD...
+    var goodidea = false;
+    // ...YUP!
     setInterval(function () {
         ctx.clearRect(0,0,500,500)
         if(!screens[screenid] || !screens[screenid].update) {
