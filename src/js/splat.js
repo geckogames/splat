@@ -172,12 +172,10 @@ window.onload = function () {
     window.onkeydown = function (e) {
         if(iskeydown(e.keyCode)) return
         keys.push(e.keyCode)
-        logcon("KEYDOWN: " + e.keyCode)
         if(e.keyCode !== 116) e.preventDefault()
     }
     window.onkeyup = function (e) {
         keys.splice(keys.indexOf(e.keyCode), 1)
-        logcon("KEYUP: " + e.keyCode)
     }
     window.onerror = function (msg, url, ln) {
         var e = "ERROR IN: " + url.replace(/^.*[\\\/]/, '') + ":" + ln + "\n" + msg

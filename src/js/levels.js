@@ -1,6 +1,9 @@
 // SPLAT LEVELS
 var level_basic = function () {
     // Basic Level
+    this.reset = function () {
+        this.objects = (new this.constructor()).objects;
+    }
     this.name = "LEVEL_BASIC";
     this.objects = [
         new Player(0, 500 - 600),
@@ -19,6 +22,9 @@ var level_basic = function () {
 }
 var level_2 = function () {
     //Level 2
+    this.reset = function () {
+        this.objects = (new this.constructor()).objects;
+    }
     this.name = "LEVEL_2";
     this.objects = [
         new Player(0, 500 - 600),
