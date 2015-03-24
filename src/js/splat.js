@@ -69,7 +69,17 @@ screens = [
                 change_screen(0)
             }
         }
-    }
+    }/*,
+	,
+	{mouseup: function (x, y) {
+            if(zoneclick(150, 240, 200, 50, x, y)) {
+                change_screen(1) // If clicks 'start game', transition to game screen
+                document.querySelector("#makeway").play()
+            } else if(zoneclick(150, 330, 200, 50, x, y)) {
+                change_screen(2)
+            }
+        }
+    },*/
 ]
 
 // Change Screen Function - Keeps track of prev screen
