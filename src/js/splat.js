@@ -157,6 +157,7 @@ window.onload = function () {
         }
         if(error) {
             errorscreen(error)
+			logcon("THE CURSE OF THE HUTT-SLIME IS UPON US!!!!!!!!!")
         } else  {
             screens[screenid].update()
             if(screens[screenid].music) {
