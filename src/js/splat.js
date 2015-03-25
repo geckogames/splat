@@ -24,11 +24,11 @@ screens = [
             }
             this.ticks += this.direction ? 1 : -1 // Change Coords in Direction
             ctx.drawImage(document.querySelector("#logo"), 50, 30 + this.ticks)
-            ctx.drawImage(document.querySelector("#startico"), 150, 200)
+            ctx.drawImage(document.querySelector("#startico"), 150, 240)
             ctx.drawImage(document.querySelector("#credico"), 150, 330)
-			ctx.drawImage(document.querySelector("#learning_slime"), 150, 190)
-            ctx.drawImage(document.querySelector("#basic_slime"), this.ticks * 2, 372)
-			ctx.drawImage(document.querySelector("#guy"), this.ticks * 5, 372)
+			ctx.drawImage(document.querySelector("#learning_slime"), this.ticks + 170, 202)
+            ctx.drawImage(document.querySelector("#basic_slime"), this.ticks * 3, 372)
+			ctx.drawImage(document.querySelector("#guy"), this.ticks * 2, 372)
         },
         mouseup: function (x, y) {
             if(zoneclick(150, 240, 200, 50, x, y)) {
@@ -149,6 +149,9 @@ window.onload = function () {
     ctx.font = "18px monospace"
     con = document.querySelector("#textarea")
     logcon("Splat! Initiated.")
+    // SING IT TO THE WORLD...
+    var goodidea = false;
+    // ...YUP!
     setInterval(function () {
         ctx.clearRect(0,0,500,500)
         if(!screens[screenid] || !screens[screenid].update) {
@@ -173,12 +176,10 @@ window.onload = function () {
     window.onkeydown = function (e) {
         if(iskeydown(e.keyCode)) return
         keys.push(e.keyCode)
-        logcon("KEYDOWN: " + e.keyCode)
         if(e.keyCode !== 116) e.preventDefault()
     }
     window.onkeyup = function (e) {
         keys.splice(keys.indexOf(e.keyCode), 1)
-        logcon("KEYUP: " + e.keyCode)
     }
     window.onerror = function (msg, url, ln) {
         var e = "ERROR IN: " + url.replace(/^.*[\\\/]/, '') + ":" + ln + "\n" + msg

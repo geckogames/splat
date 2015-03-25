@@ -45,7 +45,7 @@ var Player = function (x, y) {
             this.jump_released = true
         }
         // If player is moving on y axis
-        if(this.velocity_y || this.y < (500 - (game.levels[game.level].floor[this.x] | 0) - 128)) {
+        if(this.velocity_y || this.y < (500 - 128)) {
             // Affect velocity with gravity
             this.velocity_y += this.gravity
             // Change YPos using velocity
@@ -60,14 +60,6 @@ var Player = function (x, y) {
             }
         }
 
-        var leftlvl = (500 - (game.levels[game.level].floor[this.x] || 0) - 128)
-        var rightlvl = (500 - (game.levels[game.level].floor[this.x + 128] || 0) - 128)
-
-        /*if((this.y > leftlvl || this.y > rightlvl) && this.velocity_y < 0) {
-            this.velocity_y = 0
-            this.y = leftlvl > rightlvl ? leftlvl : rightlvl
-            this.n_jumps = 0
-        }*/
         if(this.x < 0) {
             this.x = 0;
         } else if(this.x > 2000 - 500) {
