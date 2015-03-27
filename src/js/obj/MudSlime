@@ -6,17 +6,17 @@
     And, we hope you have fun!
 */
 var SlimeFlying = function (x, y) {
-    this.name = "FLYING_SLIME_OBJECT"
+    this.name = "MUD_SLIME_OBJECT"
     this.x = x
     this.y = y
     this.truex = x
-    this.image = document.querySelector("#flying_slime")
+    this.image = document.querySelector("#mud_slime")
     this.w = 128
     this.h = 128
     this.enemy = true
     this.solid = true
-    this.SPEED = 4
-    this.current_path_index = 5;
+    this.SPEED = 0.5
+    this.current_path_index = 0;
     this.update = function () {
         //var pos = slimelogic.movetowardsplayer(game.gos.objects[0].x, this.x, this.truex, this.SPEED)
         //this.x = pos.x
