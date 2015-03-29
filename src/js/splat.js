@@ -171,9 +171,10 @@ window.onload = function () {
     }
     window.onkeyup = function (e) {
         keys.splice(keys.indexOf(e.keyCode), 1)
-        if(e.keyCode == 71) glitchygcount++;
-        if(e.keyCode == 72) glitchyhcount++;
-        if((e.keyCode == 71 || e.keyCode == 72) && glitchygcount > 29 && glitchyhcount > 29)
+        // Requirements for glitch trigger: press g exactly 30 times, then h exactly 30 times.
+        if(e.keyCode == 71 && glitchyhcount == 0) glitchygcount++;
+        if(e.keyCode == 72 && glitchygcount == 30) glitchyhcount++;
+        if(glitchygcount == 30 && glitchyhcount == 30)
             glitch = true;
     }
     window.onerror = function (msg, url, ln) {
