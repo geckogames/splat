@@ -8,7 +8,10 @@
 var gos_alpha = function () {
     this.name = "Splat GOS_ALPHA Engine"
     this.objects = []
-    this.loadLevel = function (objects) {
-        this.objects = objects
+    this.loadLevel = function (level) {
+        level.objects = (new level.constructor()).objects;
+        this.objects = level.objects
+        nomusic();
+        screens[1].music = level.music;
     }
 }

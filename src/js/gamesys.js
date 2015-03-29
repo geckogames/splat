@@ -33,23 +33,15 @@ screens[1] = {
         if(game.loadLevel) {
             game.loadLevel = false
             logcon("Loading Level: " + game.levels[game.level].name)
-            game.gos.loadLevel(game.levels[game.level].objects)
+            game.gos.loadLevel(game.levels[game.level])
         }
-        if(dev) {
-            ctx.drawImage(document.querySelector("#plainbg"), 0 - game.gos.objects[0].x, 0)
-            game.gos.objects[0].update(game.gos, this.ticks)
-            for(var i = 1; i < game.gos.objects.length; i++) {
-                game.gos.objects[i].update(game.gos, this.ticks)
-                ctx.drawImage(game.gos.objects[i].image, game.gos.objects[i].x - game.gos.objects[0].x + 200, game.gos.objects[i].y - 50)
-            }
-            ctx.drawImage(game.gos.objects[0].image, 200, game.gos.objects[0].y - 50)
-            ctx.drawImage(document.querySelector("#grass"), 0, 0);
-        } else {
-            for(var i = 0; i < game.gos.objects.length; i++) {
-                logcon(i)
-                game.gos.objects[i].update(game.gos, this.ticks)
-                ctx.drawImage(game.gos.objects[i].image, game.gos.objects[i].x, game.gos.objects[i].y)
-            }
+        ctx.drawImage(document.querySelector("#plainbg"), 0 - game.gos.objects[0].x, 0)
+        game.gos.objects[0].update(game.gos, this.ticks)
+        for(var i = 1; i < game.gos.objects.length; i++) {
+            game.gos.objects[i].update(game.gos, this.ticks)
+            ctx.drawImage(game.gos.objects[i].image, game.gos.objects[i].x - game.gos.objects[0].x + 200, game.gos.objects[i].y - 50)
         }
+        ctx.drawImage(game.gos.objects[0].image, 200, game.gos.objects[0].y - 50)
+        ctx.drawImage(document.querySelector("#grass"), 0, 0);
     }
 }

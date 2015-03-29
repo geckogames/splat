@@ -5,7 +5,7 @@
 
     And, we hope you have fun!
 */
-var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true
+var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, points = 0
 
 // Zoneclick - Check wether a click happened within a zone on the screen.
 var zoneclick = function (zonex, zoney, width, height, clickx, clicky) {
@@ -69,17 +69,21 @@ screens = [
                 change_screen(0)
             }
         }
-    }/*,
-	,
-	{mouseup: function (x, y) {
-            if(zoneclick(150, 240, 200, 50, x, y)) {
-                change_screen(1) // If clicks 'start game', transition to game screen
-                document.querySelector("#makeway").play()
-            } else if(zoneclick(150, 330, 200, 50, x, y)) {
-                change_screen(2)
+    },
+    { // Whining Screen
+        name: "WINNING_SCREEN",
+        music: "smokemachine",
+        update: function () {
+            if(this.ticks === 0) {
+                logcon("Win Screen Initiated")
             }
+            this.ticks++
+            ctx.drawImage(document.querySelector("#winning"), 0, 0)
+            ctx.fillStyle = "#fff";
+            ctx.font = "70px sans-serif";
+            ctx.fillText(points, 200, 245);
         }
-    },*/
+    }
 ]
 
 // Change Screen Function - Keeps track of prev screen
@@ -141,7 +145,6 @@ var iskeydown = function (keycode) {
 // Window Onload - Triggered on page load (duh)
 window.onload = function () {
     window.scrollTo(0, 0)
-    document.querySelector("#carnivalloader").play()
     cv = document.querySelector("#splatvas")
     ctx = cv.getContext("2d")
     cvtop = cv.getBoundingClientRect().top
@@ -163,8 +166,10 @@ window.onload = function () {
 			logcon("THE CURSE OF THE HUTT-SLIME IS UPON US!!!!!!!!!")
         } else  {
             screens[screenid].update()
-            if(screens[screenid].music) {
+            if(!glitch && screens[screenid].music) {
                 document.querySelector("#" + screens[screenid].music).play()
+            } else if (glitch) {
+                document.querySelector("#glitchmusic").play()
             }
         }
     }, 9)
@@ -180,6 +185,11 @@ window.onload = function () {
     }
     window.onkeyup = function (e) {
         keys.splice(keys.indexOf(e.keyCode), 1)
+        // Requirements for glitch trigger: press g exactly 30 times, then h exactly 30 times.
+        if(e.keyCode == 71 && glitchyhcount == 0) glitchygcount++;
+        if(e.keyCode == 72 && glitchygcount == 30) glitchyhcount++;
+        if(glitchygcount == 30 && glitchyhcount == 30)
+            glitch = true;
     }
     window.onerror = function (msg, url, ln) {
         var e = "ERROR IN: " + url.replace(/^.*[\\\/]/, '') + ":" + ln + "\n" + msg
