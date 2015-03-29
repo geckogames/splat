@@ -32,8 +32,8 @@ var level_2 = function () {
         new SlimeMutant(300, 500 - 128),
         new SlimeLearning(400, 500 - 128),
         new SlimeMutant(800, 500 - 128),
-		new SlimeFlying(400, 100),
-		new SlimeFlying(1150, 200),
+		//new SlimeFlying(400, 100),
+		//new SlimeFlying(1150, 200),
         new SlimeMutant(600, 500 - 128),
 		new SlimeMutant(1000, 500 - 128),
 		new SlimeMutant(1300, 500 - 128)

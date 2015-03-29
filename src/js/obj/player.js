@@ -10,6 +10,7 @@ var Player = function (x, y) {
     this.x = x
     this.y = y
     this.image = document.querySelector("#guy")
+    this.lives = 5
     this.w = 128
     this.h = 128
     this.velocity_y = 0
