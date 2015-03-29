@@ -6,7 +6,7 @@
     And, we hope you have fun!
 */
 var SlimeFlying = function (x, y) {
-    this.name = "LEARNING_SLIME_OBJECT"
+    this.name = "FLYING_SLIME_OBJECT"
     this.x = x
     this.y = y
     this.truex = x
