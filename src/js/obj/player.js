@@ -67,6 +67,7 @@ var Player = function (x, y) {
             if(game.level < game.levels.length - 1) {
                 game.level++;
             } else {
+                nomusic();
                 screenid = 3;
             }
             game.loadLevel = true;

@@ -72,6 +72,7 @@ screens = [
     },
     { // Whining Screen
         name: "WINNING_SCREEN",
+        music: "smokemachine",
         update: function () {
             if(this.ticks === 0) {
                 logcon("Win Screen Initiated")
