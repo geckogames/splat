@@ -4,7 +4,7 @@ var level_basic = function () {
     this.name = "LEVEL_BASIC";
     this.music = "splat_score";
     this.objects = [
-        new Player(0, 500 - 600),
+        new Player(0, -100),
         new Bush(400, 500 - 128),
 		new Bush2(50, 650 - 128),
         new Tree(430, 500 - 256),
@@ -23,7 +23,7 @@ var level_2 = function () {
     this.name = "LEVEL_2";
     this.music = "NUCLEAR";
     this.objects = [
-        new Player(0, 500 - 600),
+        new Player(0, -100),
         new Bush2(400, 500 - 128),
 		new Bush2(50, 650 - 128),
         new Bush2(430, 500 - 128),
