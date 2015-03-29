@@ -5,7 +5,7 @@
 
     And, we hope you have fun!
 */
-var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false
+var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0
 
 // Zoneclick - Check wether a click happened within a zone on the screen.
 var zoneclick = function (zonex, zoney, width, height, clickx, clicky) {
@@ -171,6 +171,10 @@ window.onload = function () {
     }
     window.onkeyup = function (e) {
         keys.splice(keys.indexOf(e.keyCode), 1)
+        if(e.keyCode == 71) glitchygcount++;
+        if(e.keyCode == 72) glitchyhcount++;
+        if((e.keyCode == 71 || e.keyCode == 72) && glitchygcount > 29 && glitchyhcount > 29)
+            glitch = true;
     }
     window.onerror = function (msg, url, ln) {
         var e = "ERROR IN: " + url.replace(/^.*[\\\/]/, '') + ":" + ln + "\n" + msg
