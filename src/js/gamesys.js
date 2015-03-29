@@ -33,7 +33,7 @@ screens[1] = {
         if(game.loadLevel) {
             game.loadLevel = false
             logcon("Loading Level: " + game.levels[game.level].name)
-            game.gos.loadLevel(game.levels[game.level].objects)
+            game.gos.loadLevel(game.levels[game.level])
         }
         if(dev) {
             ctx.drawImage(document.querySelector("#plainbg"), 0 - game.gos.objects[0].x, 0)

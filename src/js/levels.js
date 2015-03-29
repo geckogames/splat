@@ -1,10 +1,8 @@
 // SPLAT LEVELS
 var level_basic = function () {
     // Basic Level
-    this.reset = function () {
-        this.objects = (new this.constructor()).objects;
-    }
     this.name = "LEVEL_BASIC";
+    this.music = "splat_score";
     this.objects = [
         new Player(0, 500 - 600),
         new Bush(400, 500 - 128),
@@ -22,10 +20,8 @@ var level_basic = function () {
 }
 var level_2 = function () {
     //Level 2
-    this.reset = function () {
-        this.objects = (new this.constructor()).objects;
-    }
     this.name = "LEVEL_2";
+    this.music = "NUCLEAR";
     this.objects = [
         new Player(0, 500 - 600),
         new Bush2(400, 500 - 128),
