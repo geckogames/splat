@@ -64,7 +64,12 @@ var Player = function (x, y) {
         if(this.x < 0) {
             this.x = 0;
         } else if(this.x > 2000 - 500) {
-            this.x = 2000 - 500;
+            if(game.level < game.levels.length - 1) {
+                game.level++;
+            } else {
+                screenid = 3;
+            }
+            game.loadLevel = true;
         }
     }
 }

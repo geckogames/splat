@@ -5,7 +5,7 @@
 
     And, we hope you have fun!
 */
-var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0
+var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, points = 0
 
 // Zoneclick - Check wether a click happened within a zone on the screen.
 var zoneclick = function (zonex, zoney, width, height, clickx, clicky) {
@@ -68,6 +68,19 @@ screens = [
                 this.music = "percussionparadise"
                 change_screen(0)
             }
+        }
+    },
+    { // Whining Screen
+        name: "WINNING_SCREEN",
+        update: function () {
+            if(this.ticks === 0) {
+                logcon("Win Screen Initiated")
+            }
+            this.ticks++
+            ctx.drawImage(document.querySelector("#winning"), 0, 0)
+            ctx.fillStyle = "#fff";
+            ctx.font = "70px sans-serif";
+            ctx.fillText(points, 200, 245);
         }
     }
 ]
