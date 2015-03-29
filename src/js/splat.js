@@ -5,7 +5,7 @@
 
     And, we hope you have fun!
 */
-var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true
+var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false
 
 // Zoneclick - Check wether a click happened within a zone on the screen.
 var zoneclick = function (zonex, zoney, width, height, clickx, clicky) {
@@ -131,7 +131,6 @@ var iskeydown = function (keycode) {
 // Window Onload - Triggered on page load (duh)
 window.onload = function () {
     window.scrollTo(0, 0)
-    document.querySelector("#carnivalloader").play()
     cv = document.querySelector("#splatvas")
     ctx = cv.getContext("2d")
     cvtop = cv.getBoundingClientRect().top
@@ -153,8 +152,10 @@ window.onload = function () {
 			logcon("THE CURSE OF THE HUTT-SLIME IS UPON US!!!!!!!!!")
         } else  {
             screens[screenid].update()
-            if(screens[screenid].music) {
+            if(!glitch && screens[screenid].music) {
                 document.querySelector("#" + screens[screenid].music).play()
+            } else if (glitch) {
+                document.querySelector("#glitchmusic").play()
             }
         }
     }, 9)

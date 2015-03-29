@@ -15,7 +15,6 @@ var Player = function (x, y) {
     this.velocity_y = 0
     this.velocity_x = 0
     this.friction = 0.6
-    this.can_double_jump = true
     this.gravity = 0.15 // Gravitational constant for SplatLand's People
     this.jump_released = true // Whether or not jump key has been released since last jump
     this.n_jumps = 0 // Number of jumps executed without hitting the ground
@@ -36,8 +35,8 @@ var Player = function (x, y) {
         if(iskeydown(keybindings.JUMP) && this.jump_released && this.n_jumps < 2) { // If liable to jump (max double-jump)
             // Set to jump velocity
             this.velocity_y = -7
-            // If player can double jump, record that the jump button was not released
-            this.jump_released = !this.can_double_jump
+            // If player can double jump (with glitch setting), record that the jump button was not released
+            this.jump_released = !glitch
             // Increment Number of Jumps (Max double-jump)
             this.n_jumps++
         }
