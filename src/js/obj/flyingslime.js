@@ -15,14 +15,14 @@ var SlimeFlying = function (x, y) {
     this.h = 128
     this.enemy = true
     this.solid = true
-    this.SPEED = 1
-    this.current_path_index = 0;
+    this.SPEED = 5
+    this.current_path_index = 5;
     this.update = function () {
-        var pos = slimelogic.movetowardsplayer(game.gos.objects[0].x, this.x, this.truex, this.SPEED)
-        this.x = pos.x
-        this.truex = pos.truex
-        //var pm = slimelogic.path_movement(this.current_path_index, 300, 1, this.x);
-        //this.current_path_index = pm.new_index;
-        //this.x = pm.new_x;
+        //var pos = slimelogic.movetowardsplayer(game.gos.objects[0].x, this.x, this.truex, this.SPEED)
+        //this.x = pos.x
+        //this.truex = pos.truex
+        var pm = slimelogic.path_movement(this.current_path_index, 300, 1, this.x);
+        this.current_path_index = pm.new_index;
+        this.x = pm.new_x;
     }
 }
