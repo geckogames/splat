@@ -12,6 +12,7 @@ var SplatGame = function (gmp, gos, gie) {
     this.level = 0
     this.loadLevel = true
     this.levels = [
+        new level_tutorial(),
         new level_basic(),
         new level_2()
     ]

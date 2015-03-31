@@ -1,4 +1,25 @@
 // SPLAT LEVELS
+var level_tutorial = function () {
+    // Tutorial Level
+    this.name = "LEVEL_TUTORIAL";
+    this.music = "splat_score";
+    this.bgimg = "plainbg";
+    this.width = 2000;
+    this.objects = [
+        new Player(0, -100),
+        new Bush(400, 500 - 128),
+		new Bush2(50, 650 - 128),
+        new Tree(430, 500 - 256),
+		new Bush(1400, 500 - 128),
+		new Tree2(1200, 500 - 256),
+        new SlimeBasic(300, 500 - 128),
+        new SlimeLearning(400, 500 - 128),
+        new SlimeBasic(800, 500 - 128),
+        new SlimeBasic(600, 500 - 128),
+		new SlimeBasic(1000, 500 - 128),
+		new SlimeBasic(1300, 500 - 128)
+    ];
+}
 var level_basic = function () {
     // Basic Level
     this.name = "LEVEL_BASIC";
