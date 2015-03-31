@@ -163,7 +163,6 @@ window.onload = function () {
         }
         if(error) {
             errorscreen(error)
-			logcon("THE CURSE OF THE HUTT-SLIME IS UPON US!!!!!!!!!")
         } else  {
             screens[screenid].update()
             if(!glitch && screens[screenid].music) {
@@ -198,5 +197,6 @@ window.onload = function () {
         var e = "ERROR IN: " + url.replace(/^.*[\\\/]/, '') + ":" + ln + "\n" + msg
         error = e
         logcon(e)
+        logcon("THE CURSE OF THE HUTT-SLIME IS UPON US!!!!!!!!!")
     }
 }
