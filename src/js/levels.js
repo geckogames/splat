@@ -3,6 +3,8 @@ var level_basic = function () {
     // Basic Level
     this.name = "LEVEL_BASIC";
     this.music = "splat_score";
+    this.bgimg = "plainbg";
+    this.width = 2000;
     this.objects = [
         new Player(0, -100),
         new Bush(400, 500 - 128),
@@ -22,6 +24,8 @@ var level_2 = function () {
     //Level 2
     this.name = "LEVEL_2";
     this.music = "NUCLEAR";
+    this.bgimg = "foggi";
+    this.width = 3000;
     this.objects = [
         new Player(0, -100),
         new Bush2(400, 500 - 128),

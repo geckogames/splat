@@ -35,7 +35,7 @@ screens[1] = {
             logcon("Loading Level: " + game.levels[game.level].name)
             game.gos.loadLevel(game.levels[game.level])
         }
-        ctx.drawImage(document.querySelector("#plainbg"), 0 - game.gos.objects[0].x, 0)
+        ctx.drawImage(document.querySelector("#" + game.levels[game.level].bgimg), 0 - game.gos.objects[0].x, 0)
         game.gos.objects[0].update(game.gos, this.ticks)
         for(var i = 1; i < game.gos.objects.length; i++) {
             game.gos.objects[i].update(game.gos, this.ticks)
