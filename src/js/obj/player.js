@@ -11,6 +11,7 @@ var Player = function (x, y) {
     this.y = y
     this.image = document.querySelector("#guy")
     this.lives = 5
+    this.can_move_left_right = false
     this.w = 128
     this.h = 128
     this.velocity_y = 0
@@ -20,12 +21,16 @@ var Player = function (x, y) {
     this.jump_released = true // Whether or not jump key has been released since last jump
     this.n_jumps = 0 // Number of jumps executed without hitting the ground
     this.update = function (goe, ticks) {
-        if(iskeydown(keybindings.RIGHT)) { // Move Right
-            this.velocity_x = 5
+        if(this.can_move_left_right) {
+            if(iskeydown(keybindings.RIGHT)) { // Move Right
+                this.velocity_x = 5
+            }
+            if(iskeydown(keybindings.LEFT)) { // Move Left
+                this.velocity_x = -5
+            }
         }
-        if(iskeydown(keybindings.LEFT)) { // Move Left
-            this.velocity_x = -5
-        }
+        if(!this.can_move_left_right && this.y > 500 - 129)
+            this.can_move_left_right = true
         if(this.velocity_x && this.y === 500 - 128) {
             this.velocity_x += (this.velocity_x > 0) ? -this.friction : this.friction
         } else if (this.velocity_x) {
