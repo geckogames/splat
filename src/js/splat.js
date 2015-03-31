@@ -188,8 +188,11 @@ window.onload = function () {
         // Requirements for glitch trigger: press g exactly 30 times, then h exactly 30 times.
         if(e.keyCode == 71 && glitchyhcount == 0) glitchygcount++;
         if(e.keyCode == 72 && glitchygcount == 30) glitchyhcount++;
-        if(glitchygcount == 30 && glitchyhcount == 30)
+        if(glitchygcount == 30 && glitchyhcount == 30) {
             glitch = true;
+            cv.style.background = "#f00";
+        }
+
     }
     window.onerror = function (msg, url, ln) {
         var e = "ERROR IN: " + url.replace(/^.*[\\\/]/, '') + ":" + ln + "\n" + msg
