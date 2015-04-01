@@ -25,7 +25,7 @@ var SlimeBasic = function (x, y) {
         this.current_path_index = pm.new_index;
         this.x = pm.new_x;
     }
-    if (iskeydown(keybindings.ATTACK)){
+    if (iskeydown(keybindings.ATTACK && game.gos.objects[0].x > game.gos.objects[this].x && game.gos.objects[0].x < game.gos.objects[this].x + 128)){
         game.gos.objects.splice(game.gos.objects.indexOf(this), 1);
     }
 }
