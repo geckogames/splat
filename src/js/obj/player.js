@@ -85,6 +85,6 @@ var Player = function (x, y) {
         this.lives -= 0.005;
     }
     this.bouncy = function () {
-        this.velocity_y = -3;
+        this.velocity_y -= 3;
     }
 }
