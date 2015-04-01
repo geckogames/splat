@@ -13,8 +13,6 @@ var Bush = function (x, y) {
     this.image = document.querySelector("#bush");
     this.w = 200;
     this.h = 200;
-    this.enemy = false;
-    this.solid = true;
     this.update = function () {
     };
 };

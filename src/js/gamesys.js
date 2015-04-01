@@ -5,9 +5,7 @@
 
     And, we hope you have fun!
 */
-var SplatGame = function (gmp, gos, gie) {
-    this.gie = gie
-    this.gmp = gmp
+var SplatGame = function (gos) {
     this.gos = gos
     this.level = 0
     this.loadLevel = true
@@ -17,8 +15,6 @@ var SplatGame = function (gmp, gos, gie) {
         new level_2()
     ]
     logcon("Gameplay Initiated.")
-    logcon("Game Intersection Engine: \"" + this.gie.name + "\"")
-    logcon("Game Music Player: \"" + this.gmp.name + "\"")
     logcon("Game Object System: \"" + this.gos.name + "\"")
 }
 var game
@@ -28,7 +24,7 @@ screens[1] = {
     ticks: 0,
     update: function () {
         if(this.ticks === 0) {
-            game = new SplatGame(new gmp_alpha(), new gos_alpha(), new gie_alpha())
+            game = new SplatGame(new gos_alpha())
         }
         this.ticks++;
         if(game.loadLevel) {

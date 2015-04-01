@@ -13,8 +13,6 @@ var Tree2 = function (x, y) {
     this.image = document.querySelector("#tree2")
     this.w = 400
     this.h = 400
-    this.enemy = false
-    this.solid = false
     this.update = function () {
     };
 };
