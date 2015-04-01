@@ -12,8 +12,6 @@ var NullObject = function () {
     this.image = document.querySelector("#nullimg")
     this.w = 1
     this.h = 1
-    this.enemy = false
-    this.solid = false
     this.update = function () {
     };
 };
