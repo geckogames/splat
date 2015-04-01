@@ -81,6 +81,19 @@ screens = [
             ctx.font = "70px sans-serif";
             ctx.fillText(points, 200, 245);
         }
+    },
+    { // Losing Screen
+        name: "LOSING_SCREEN",
+        music: "smokemachine",
+        update: function () {
+            if(this.ticks === 0) {
+                logcon("Loss Screen Initiated")
+            }
+            ctx.drawImage(document.querySelector("#losing"), 0, 0)
+            ctx.fillStyle = "#fff";
+            ctx.font = "70px sans-serif";
+            ctx.fillText(points, 220, 300);
+        }
     }
 ]
 

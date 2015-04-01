@@ -21,6 +21,9 @@ var Player = function (x, y) {
     this.jump_released = true // Whether or not jump key has been released since last jump
     this.n_jumps = 0 // Number of jumps executed without hitting the ground
     this.update = function (goe, ticks) {
+        if(this.lives < 1) {
+            change_screen(4);
+        }
         if(this.can_move_left_right) {
             if(iskeydown(keybindings.RIGHT)) { // Move Right
                 this.velocity_x = 5
@@ -79,6 +82,6 @@ var Player = function (x, y) {
         }
     }
     this.dodamage = function () {
-        this.health -= 0.05;
+        this.lives -= 0.05;
     }
 }
