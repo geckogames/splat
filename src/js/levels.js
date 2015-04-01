@@ -60,3 +60,27 @@ var level_2 = function () {
         new NullObject()
     ];
 }
+var level_3 = function () {
+    //Level 3
+    this.name = "LEVEL_3";
+    this.music = "InTheWild";
+    this.bgimg = "jungle";
+    this.width = 3000;
+    this.objects = [
+        new Player(0, -100),
+        new Bush2(400, 500 - 128),
+		new Bush2(50, 650 - 128),
+        new Bush2(430, 500 - 128),
+		new Bush2(1400, 500 - 128),
+		new Bush2(1200, 500 - 128),
+        new SlimeMutant(300, 500 - 128),
+        new SlimeLearning(400, 500 - 128),
+        new SlimeMutant(800, 500 - 128),
+		//new SlimeFlying(400, 100),
+		//new SlimeFlying(1150, 200),
+        new SlimeMutant(600, 500 - 128),
+		new SlimeMutant(1000, 500 - 128),
+		new SlimeMutant(1300, 500 - 128),
+        new NullObject()
+    ];
+}
