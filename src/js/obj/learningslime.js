@@ -21,9 +21,6 @@ var SlimeLearning = function (x, y) {
         var pos = slimelogic.movetowardsplayer(game.gos.objects[0].x, this.x, this.truex, this.SPEED)
         this.x = pos.x
         this.truex = pos.truex
-        //var pm = slimelogic.path_movement(this.current_path_index, 300, 1, this.x);
-        //this.current_path_index = pm.new_index;
-        //this.x = pm.new_x;
         var tio = game.gos.objects.indexOf(this);
         if (((game.gos.objects[0].x > this.x && game.gos.objects[0].x < this.x + 128) || (game.gos.objects[0].x + 128 > this.x && game.gos.objects[0].x + 128 < this.x + 128)) && game.gos.objects[0].y >= this.y){
             if(iskeydown(keybindings.ATTACK)) {
