@@ -82,6 +82,6 @@ var Player = function (x, y) {
         }
     }
     this.dodamage = function () {
-        this.lives -= 0.05;
+        this.lives -= 0.01;
     }
 }
