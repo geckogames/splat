@@ -25,4 +25,7 @@ var SlimeBasic = function (x, y) {
         this.current_path_index = pm.new_index;
         this.x = pm.new_x;
     }
+    if (iskeydown(40)){
+        game.gos.objects.splice(game.gos.objects.indexOf(this), 1);
+    }
 }
