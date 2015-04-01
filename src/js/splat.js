@@ -183,8 +183,8 @@ window.onload = function () {
     window.onkeyup = function (e) {
         keys.splice(keys.indexOf(e.keyCode), 1)
         // Requirements for glitch trigger: press g exactly 30 times, then h exactly 30 times.
-        if(e.keyCode == 71 && glitchyhcount == 0) glitchygcount++;
-        if(e.keyCode == 72 && glitchygcount == 30) glitchyhcount++;
+        if(e.keyCode == keybindings.G && glitchyhcount == 0) glitchygcount++;
+        if(e.keyCode == keybindings.H && glitchygcount == 30) glitchyhcount++;
         if(glitchygcount == 30 && glitchyhcount == 30) {
             nomusic();
             glitch = true;
