@@ -9,7 +9,8 @@ var level_tutorial = function () {
         new Player(0, -100),
         new SlimeBasic(800, 500 - 128),
         new SlimeBasic(1000, 500 - 128),
-        new SlimeBasic(1200, 500 - 128)
+        new SlimeBasic(1200, 500 - 128),
+        new NullObject()
     ];
 }
 var level_basic = function () {
@@ -30,7 +31,9 @@ var level_basic = function () {
         new SlimeBasic(800, 500 - 128),
         new SlimeBasic(600, 500 - 128),
 		new SlimeBasic(1000, 500 - 128),
-		new SlimeBasic(1300, 500 - 128)
+		new SlimeBasic(1300, 500 - 128),
+        new NullObject()
+
     ];
 }
 var level_2 = function () {
@@ -53,6 +56,7 @@ var level_2 = function () {
 		//new SlimeFlying(1150, 200),
         new SlimeMutant(600, 500 - 128),
 		new SlimeMutant(1000, 500 - 128),
-		new SlimeMutant(1300, 500 - 128)
+		new SlimeMutant(1300, 500 - 128),
+        new NullObject()
     ];
 }
