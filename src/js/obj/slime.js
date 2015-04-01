@@ -28,6 +28,7 @@ var SlimeBasic = function (x, y) {
         if (((game.gos.objects[0].x > this.x && game.gos.objects[0].x < this.x + 128) || (game.gos.objects[0].x + 128 > this.x && game.gos.objects[0].x + 128 < this.x + 128)) && game.gos.objects[0].y >= this.y){
             if(iskeydown(keybindings.ATTACK)) {
                 game.gos.objects.splice(tio, 1);
+                points++;
             } else {
                 game.gos.objects[0].dodamage();
             }
