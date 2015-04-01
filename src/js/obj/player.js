@@ -25,7 +25,7 @@ var Player = function (x, y) {
             change_screen(4);
         }
         if(this.can_move_left_right) {
-            if(iskeydown(keybindings.RIGHT)) { // Move Right
+            if(iskeydown(keybindings.RIGHT) && this.velocity_x > -6) { // Move Right
                 this.velocity_x = 5
             }
             if(iskeydown(keybindings.LEFT)) { // Move Left
@@ -82,6 +82,7 @@ var Player = function (x, y) {
         }
     }
     this.dodamage = function () {
-        this.lives -= 0.01;
+        this.lives -= 0.005;
+        this.velocity_y = -3;
     }
 }

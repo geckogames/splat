@@ -22,7 +22,15 @@ screens[1] = {
     name: "GAME_SCREEN",
     music: "splat_score",
     ticks: 0,
+    hasdown: false,
     update: function () {
+        if(iskeydown(keybindings.ATTACK)) {
+            if (this.hasdown) {
+                window.onkeyup({keyCode: keybindings.ATTACK});
+            } else {
+                this.hasdown = true;
+            }
+        }
         if(this.ticks === 0) {
             game = new SplatGame(new gos_alpha())
         }
