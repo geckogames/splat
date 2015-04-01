@@ -33,7 +33,6 @@ screens = [
         mouseup: function (x, y) {
             if(zoneclick(150, 240, 200, 50, x, y)) {
                 change_screen(1) // If clicks 'start game', transition to game screen
-                document.querySelector("#makeway").play()
             } else if(zoneclick(150, 330, 200, 50, x, y)) {
                 change_screen(2)
             }
@@ -77,7 +76,6 @@ screens = [
             if(this.ticks === 0) {
                 logcon("Win Screen Initiated")
             }
-            this.ticks++
             ctx.drawImage(document.querySelector("#winning"), 0, 0)
             ctx.fillStyle = "#fff";
             ctx.font = "70px sans-serif";
@@ -188,6 +186,7 @@ window.onload = function () {
         if(e.keyCode == 71 && glitchyhcount == 0) glitchygcount++;
         if(e.keyCode == 72 && glitchygcount == 30) glitchyhcount++;
         if(glitchygcount == 30 && glitchyhcount == 30) {
+            nomusic();
             glitch = true;
             cv.style.background = "#f00";
         }
