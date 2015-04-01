@@ -29,7 +29,7 @@ var SlimePepper = function (x, y) {
             if(iskeydown(keybindings.ATTACK)) {
                 game.gos.objects.splice(tio, 1);
             } else {
-                game.gos.objects[0].health -= 0.1;
+                game.gos.objects[0].dodamage();
             }
         }
     }

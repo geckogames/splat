@@ -78,4 +78,7 @@ var Player = function (x, y) {
             game.loadLevel = true;
         }
     }
+    this.dodamage = function () {
+        this.health -= 0.05;
+    }
 }
