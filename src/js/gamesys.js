@@ -27,6 +27,7 @@ screens[1] = {
         if(iskeydown(keybindings.ATTACK)) {
             if (this.hasdown) {
                 window.onkeyup({keyCode: keybindings.ATTACK});
+                this.hasdown = false;
             } else {
                 this.hasdown = true;
             }
