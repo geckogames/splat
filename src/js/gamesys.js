@@ -49,5 +49,9 @@ screens[1] = {
         }
         ctx.drawImage(game.gos.objects[0].image, 200, game.gos.objects[0].y - 50)
         ctx.drawImage(document.querySelector("#grass"), 0, 0);
+        var icowidth_and_spacing = 35; var heart_i = 0;
+        while (heart_i < game.gos.objects[0].lives) {
+            ctx.drawImage(document.querySelector("#heart"), icowidth_and_spacing * heart_i++ + 10, 10);
+        }
     }
 }
