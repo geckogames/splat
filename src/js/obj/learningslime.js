@@ -15,16 +15,23 @@ var SlimeLearning = function (x, y) {
     this.h = 128
     this.SPEED = 1
     this.current_path_index = 0;
+    this.health = 5;
     this.update = function () {
         var pos = slimelogic.movetowardsplayer(game.gos.objects[0].x, this.x, this.truex, this.SPEED)
         this.x = pos.x
         this.truex = pos.truex
         var tio = game.gos.objects.indexOf(this);
-        if (((game.gos.objects[0].x > this.x && game.gos.objects[0].x < this.x + 128) || (game.gos.objects[0].x + 128 > this.x && game.gos.objects[0].x + 128 < this.x + 128)) && game.gos.objects[0].y >= this.y){
+        if (((game.gos.objects[0].x > this.x && game.gos.objects[0].x < this.x + 128) || (game.gos.objects[0].x + 128 > this.x && game.gos.objects[0].x + 128 < this.x + 128)) && game.gos.objects[0].y + 128 >= this.y){
             if(iskeydown(keybindings.ATTACK)) {
-                game.gos.objects.splice(tio, 1);
-                points++;
+                this.health--;
+                if(this.health == 0) {
+                    game.gos.objects.splice(tio, 1);
+                    points++;
+                }
             } else {
+                if (game.gos.objects[0].y >= this.y) {
+                    game.gos.objects[0].bouncy();
+                }
                 game.gos.objects[0].dodamage();
             }
         }

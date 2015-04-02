@@ -23,7 +23,16 @@ screens[1] = {
     name: "GAME_SCREEN",
     music: "splat_score",
     ticks: 0,
+    hasdown: false,
     update: function () {
+        if(iskeydown(keybindings.ATTACK)) {
+            if (this.hasdown) {
+                window.onkeyup({keyCode: keybindings.ATTACK});
+                this.hasdown = false;
+            } else {
+                this.hasdown = true;
+            }
+        }
         if(this.ticks === 0) {
             game = new SplatGame(new gos_alpha())
         }
@@ -40,6 +49,10 @@ screens[1] = {
             ctx.drawImage(game.gos.objects[i].image, game.gos.objects[i].x - game.gos.objects[0].x + 200, game.gos.objects[i].y - 50)
         }
         ctx.drawImage(game.gos.objects[0].image, 200, game.gos.objects[0].y - 50)
-        ctx.drawImage(document.querySelector("#grass"), 0, 0);
+        // ctx.drawImage(document.querySelector("#grass"), 0, 0); DELETE
+        var icowidth_and_spacing = 35; var heart_i = 0;
+        while (heart_i < game.gos.objects[0].lives) {
+            ctx.drawImage(document.querySelector("#heart"), icowidth_and_spacing * heart_i++ + 10, 10);
+        }
     }
 }
