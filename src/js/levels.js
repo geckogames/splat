@@ -65,7 +65,7 @@ var level_3 = function () {
     this.name = "LEVEL_3";
     this.music = "InTheWild";
     this.bgimg = "jungle";
-    this.width = 3000;
+    this.width = 4000;
     this.objects = [
         new Player(0, -100),
         new Bush2(400, 500 - 128),

@@ -12,7 +12,8 @@ var SplatGame = function (gos) {
     this.levels = [
         new level_tutorial(),
         new level_basic(),
-        new level_2()
+        new level_2(),
+        new level_3()
     ]
     logcon("Gameplay Initiated.")
     logcon("Game Object System: \"" + this.gos.name + "\"")
