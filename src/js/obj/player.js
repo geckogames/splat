@@ -82,7 +82,7 @@ var Player = function (x, y) {
         }
     }
     this.dodamage = function () {
-        this.lives -= 0.02;
+        this.lives -= 0.005;
     }
     this.bouncy = function () {
         this.velocity_y -= 3;
