@@ -12,6 +12,7 @@ var level_tutorial = function () {
         new SlimeBasic(1200, 500 - 128),
         new NullObject()
     ];
+    this.needtokill = 3;
 }
 var level_basic = function () {
     // Basic Level
@@ -33,8 +34,8 @@ var level_basic = function () {
 		new SlimeBasic(1000, 500 - 128),
 		new SlimeBasic(1300, 500 - 128),
         new NullObject()
-
     ];
+    this.needtokill = 6;
 }
 var level_2 = function () {
     //Level 2
@@ -59,6 +60,7 @@ var level_2 = function () {
 		new SlimeMutant(1300, 500 - 128),
         new NullObject()
     ];
+    this.needtokill = 6;
 }
 var level_3 = function () {
     //Level 3
@@ -83,4 +85,5 @@ var level_3 = function () {
 		new SlimeMutant(1300, 500 - 128),
         new NullObject()
     ];
+    this.needtokill = 6;
 }
