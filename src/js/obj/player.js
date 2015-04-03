@@ -43,7 +43,7 @@ var Player = function (x, y) {
         if(Math.floor(this.velocity_x) === 0) this.velocity_x = 0;
         if(iskeydown(keybindings.JUMP) && this.jump_released && this.n_jumps < 2) { // If liable to jump (max double-jump)
             // Set to jump velocity
-            this.velocity_y = -4.5
+            this.velocity_y = -6
             // If player can double jump (with glitch setting), record that the jump button was not released
             this.jump_released = !glitch
             // Increment Number of Jumps (Max double-jump)
