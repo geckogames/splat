@@ -27,6 +27,7 @@ var SlimeBasic = function (x, y) {
                 if(this.health == 0) {
                     game.gos.objects.splice(tio, 1);
                     points++;
+                    game.gos.needtokill--;
                 }
             } else {
                 if (game.gos.objects[0].y >= this.y) {
