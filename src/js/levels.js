@@ -95,6 +95,7 @@ var level_3 = function () {
         new SlimeMutant(600, 500 - 128),
 		new SlimeMutant(1000, 500 - 128),
 		new SlimeMutant(1300, 500 - 128),
+		new SlimeTrap(3000, 500 - 128),
         new NullObject()
     ];
     this.needtokill = 6;
