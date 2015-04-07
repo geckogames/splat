@@ -28,7 +28,7 @@ var SlimeBasic = function (x, y) {
                 if(this.health == 0) {
                     game.gos.objects.splice(tio, 1);
                     points++;
-                    var dropchance = function () {
+                    var dropchance = {
 						Math.floor((Math.random() * 10) + 1);
                     	if (dropchance = 10){
                     	game.gos.objects.push(new Coin(this.x, this.y));
