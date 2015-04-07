@@ -28,23 +28,21 @@ var SlimeBasic = function (x, y) {
                 if(this.health == 0) {
                     game.gos.objects.splice(tio, 1);
                     points++;
-<<<<<<< HEAD
-                    dropchance = Math.floor((Math.random() * 10) + 1);
-                    if (dropchance = 10){
-                    game.gos.objects.push(new Coin(this.x, this.y));
-                    game.gos.objects.push(new Coin(this.x - 4, this.y));
+                    var dropchance = function () {
+						Math.floor((Math.random() * 10) + 1);
+                    	if (dropchance = 10){
+                    	game.gos.objects.push(new Coin(this.x, this.y));
+                    	game.gos.objects.push(new Coin(this.x - 4, this.y));
+                    	}
+                    	if (dropchance = 9){
+                    	game.gos.objects.push(new Coin(this.x, this.y));
+                    	game.gos.objects.push(new Heart(this.x - 4, this.y));
+                    	}
+                    	else{
+                    	game.gos.objects.push(new Coin(this.x, this.y));
                     }
-                    if (dropchance = 9){
-                    game.gos.objects.push(new Coin(this.x, this.y));
-                    game.gos.objects.push(new Heart(this.x - 4, this.y));
-                    }
-                    if (dropchance = > 8 && dropchance = < 1) {
-                    game.gos.objects.push(new Coin(this.x, this.y));
-                    }
-=======
                     game.gos.needtokill--;
->>>>>>> origin/master
-                }
+					}
             } else {
                 if (game.gos.objects[0].y >= this.y) {
                     game.gos.objects[0].bouncy();
