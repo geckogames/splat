@@ -15,7 +15,7 @@ var SlimeMutant = function (x, y) {
     this.h = 128
     this.SPEED = 1.8
     this.current_path_index = 0;
-    this.health = 5;
+    this.health = 3;
     this.update = function () {
         var pm = slimelogic.path_movement(this.current_path_index, 350, 3, this.x);
         this.current_path_index = pm.new_index;
@@ -27,6 +27,7 @@ var SlimeMutant = function (x, y) {
                 if(this.health == 0) {
                     game.gos.objects.splice(tio, 1);
                     points++;
+                    game.gos.needtokill--;
                 }
             } else {
                 if (game.gos.objects[0].y >= this.y) {
