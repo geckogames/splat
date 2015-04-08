@@ -96,14 +96,13 @@ screens = [
         }
     },
     {
-            name: "LEVEL_SELECT",
-            music: "",
-            update: function () {
-                if(this.ticks == 0) {
-                    logcon("Level Select Initiated")
-                }
-                ctx.drawImage(document.querySelector("#levelselect"), 0, 0)
+        name: "LEVEL_SELECT",
+        music: "",
+        update: function () {
+            if(this.ticks == 0) {
+                logcon("Level Select Initiated")
             }
+            ctx.drawImage(document.querySelector("#levelselect"), 0, 0)
         }
     }
 ]
