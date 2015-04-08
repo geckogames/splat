@@ -103,6 +103,17 @@ screens = [
                 logcon("Level Select Initiated")
             }
             ctx.drawImage(document.querySelector("#levelselect"), 0, 0)
+        },
+        mouseup: function (x, y) {
+            if(zoneclick(38, 40, 66, 62, x, y)) {
+                change_screen(1);
+                game.level = 1;
+                game.loadLevel = true;
+            } else if(zoneclick(162, 40, 66, 62, x, y)) {
+                change_screen(1);
+                game.level = 2;
+                game.loadLevel = true;
+            }
         }
     }
 ]
@@ -182,16 +193,7 @@ window.onload = function () {
     setInterval(function () {
         ctx.clearRect(0,0,500,500)
         if(!screens[screenid] || !screens[screenid].update) {
-            nomusic()+
-
-
-
-
-
-
-
-
-                6
+            nomusic()
             error = "Attempting to read nonexistent screen: " + screenid + (screens[screenid].name ? " (" + screens[screenid].name + ")" : "") +  "\n" + "Transition triggered by screen: " + pscreenid + (screens[pscreenid].name ? " (" + screens[pscreenid].name + ")" : "")
         }
         if(error) {
