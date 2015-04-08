@@ -10,6 +10,7 @@ var level_tutorial = function () {
         new SlimeBasic(800, 500 - 128),
         new SlimeBasic(1000, 500 - 128),
         new SlimeBasic(1200, 500 - 128),
+        new Spikes(1200, 500 - 128),
         new NullObject()
     ];
     this.needtokill = 3;
