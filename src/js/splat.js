@@ -4,6 +4,21 @@
     All Rights Reserved
 
     And, we hope you have fun!
+
+    This file is part of Splat!.
+
+    Splat! is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Splat! is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Splat!.  If not, see <http://www.gnu.org/licenses/>.
 */
 var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, points = 0, coins = 0
 
@@ -53,7 +68,7 @@ screens = [
                 this.music = null
             }
             var loc = 250
-            loc = 250 - Math.floor(this.ticks / 3)
+            loc = 250 - Math.floor(this.ticks / 4)
             if(loc < -1070) {
                 if(loc === -1070) {
                     logcon("Credits YPosFreeze")
@@ -61,7 +76,7 @@ screens = [
                 loc = -1070
             }
             ctx.drawImage(document.querySelector("#credits"), 0, loc)
-            if(this.ticks > 4400) {
+            if(this.ticks > 5600) {
                 logcon("Credits End")
                 this.ticks = 0
                 this.music = "percussionparadise"
