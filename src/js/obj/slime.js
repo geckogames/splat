@@ -28,7 +28,7 @@ var SlimeBasic = function (x, y) {
                 if(this.health == 0) {
                     game.gos.objects.splice(tio, 1);
                     points++;
-                    var dropchance = {
+                    /*dropchance = {
 						Math.floor((Math.random() * 10) + 1);
                     	if (dropchance = 10){
                     	game.gos.objects.push(new Coin(this.x, this.y));
@@ -37,10 +37,10 @@ var SlimeBasic = function (x, y) {
                     	if (dropchance = 9){
                     	game.gos.objects.push(new Coin(this.x, this.y));
                     	game.gos.objects.push(new Heart(this.x - 4, this.y));
-                    	}
+						}
                     	else{
                     	game.gos.objects.push(new Coin(this.x, this.y));
-                    }
+                    }*/
                     game.gos.needtokill--;
 					}
             } else {
