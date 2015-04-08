@@ -245,6 +245,6 @@ window.onload = function () {
         var e = "ERROR IN: " + url.replace(/^.*[\\\/]/, '') + ":" + ln + "\n" + msg
         error = e
         logcon(e)
-        logcon("THE CURSE OF THE HUTT-SLIME IS UPON US!!!!!!!!!")
+        logcon("THE CURSE OF TARAN IS UPON US!!!!!!!!!")
     }
 }
