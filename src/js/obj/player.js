@@ -75,7 +75,7 @@ var Player = function (x, y) {
             if(game.gos.needtokill > 0) {
                 this.x = game.levels[game.level].width - 500
             } else if(game.level < game.levels.length - 1) {
-                game.level++;
+                change_screen(5);
             } else {
                 nomusic();
                 screenid = 3;
