@@ -6,7 +6,6 @@
     And, we hope you have fun!
 */
 var SlimeBasic = function (x, y) {
-    var dropchance;
     this.name = "SLIME_OBJECT"
     this.x = x
     this.y = y
@@ -28,22 +27,21 @@ var SlimeBasic = function (x, y) {
                 if(this.health == 0) {
                     game.gos.objects.splice(tio, 1);
                     points++;
-<<<<<<< HEAD
-                    dropchance = Math.floor((Math.random() * 10) + 1);
-                    if (dropchance = 10){
+                    /*var dropchance = Math.floor((Math.random() * 10) + 1);
+                    switch(dropchance){
+                    case 10:
                     game.gos.objects.push(new Coin(this.x, this.y));
                     game.gos.objects.push(new Coin(this.x - 4, this.y));
-                    }
-                    if (dropchance = 9){
+                        break;
+                    case 9:
                     game.gos.objects.push(new Coin(this.x, this.y));
                     game.gos.objects.push(new Heart(this.x - 4, this.y));
-                    }
-                    if (dropchance = > 8 && dropchance = < 1) {
+                        break;
+                    case 8, 7, 6, 5, 4, 3, 2, 1:
                     game.gos.objects.push(new Coin(this.x, this.y));
-                    }
-=======
+                        break;
+                    }*/
                     game.gos.needtokill--;
->>>>>>> origin/master
                 }
             } else {
                 if (game.gos.objects[0].y >= this.y) {
