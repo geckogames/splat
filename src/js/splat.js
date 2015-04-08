@@ -94,6 +94,17 @@ screens = [
             ctx.font = "70px sans-serif";
             ctx.fillText(points, 220, 300);
         }
+    },
+    {
+            name: "LEVEL_SELECT",
+            music: "",
+            update: function () {
+                if(this.ticks == 0) {
+                    logcon("Level Select Initiated")
+                }
+                ctx.drawImage(document.querySelector("#levelselect"), 0, 0)
+            }
+        }
     }
 ]
 
@@ -102,6 +113,9 @@ var change_screen = function (x) {
     nomusic()
     pscreenid = screenid // Assign Previous Screen ID for errors.
     screenid = x // Assign Current Screen ID to requested ID
+}
+var level_select = function () {
+    change_screen(4)
 }
 
 // Chunk String - From http://stackoverflow.com/questions/1772941/how-can-i-insert-a-character-after-every-n-characters-in-javascript
@@ -169,7 +183,16 @@ window.onload = function () {
     setInterval(function () {
         ctx.clearRect(0,0,500,500)
         if(!screens[screenid] || !screens[screenid].update) {
-            nomusic()
+            nomusic()+
+
+
+
+
+
+
+
+
+                6
             error = "Attempting to read nonexistent screen: " + screenid + (screens[screenid].name ? " (" + screens[screenid].name + ")" : "") +  "\n" + "Transition triggered by screen: " + pscreenid + (screens[pscreenid].name ? " (" + screens[pscreenid].name + ")" : "")
         }
         if(error) {
