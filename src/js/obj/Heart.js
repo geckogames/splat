@@ -5,7 +5,7 @@
 
     And, we hope you have fun!
 */
-var Coin = function (x, y) {
+var Heart = function (x, y) {
     this.name = "HEART_OBJECT"
     this.x = x
     this.y = y
