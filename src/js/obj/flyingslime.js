@@ -21,7 +21,7 @@ var SlimeFlying = function (x, y) {
         this.current_path_index = pm.new_index;
         this.x = pm.new_x;
         var tio = game.gos.objects.indexOf(this);
-        if (((game.gos.objects[0].x > this.x && game.gos.objects[0].x < this.x + 128) || (game.gos.objects[0].x + 128 > this.x && game.gos.objects[0].x + 128 < this.x + 128)) && game.gos.objects[0].y + 128 >= this.y){
+        if (((game.gos.objects[0].x > this.x && game.gos.objects[0].x < this.x + 128) || (game.gos.objects[0].x + 128 > this.x && game.gos.objects[0].x + 128 < this.x + 128)) && (game.gos.objects[0].y + 128 >= this.y && game.gos.objects[0].y <= this.y + 128)){
             if(iskeydown(keybindings.ATTACK)) {
                 this.health--;
                 if(this.health == 0) {
