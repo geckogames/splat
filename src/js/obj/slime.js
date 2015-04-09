@@ -4,13 +4,28 @@
     All Rights Reserved
 
     And, we hope you have fun!
+
+    This file is part of Splat!.
+
+    Splat! is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Splat! is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Splat!.  If not, see <http://www.gnu.org/licenses/>.
 */
 var SlimeBasic = function (x, y) {
     this.name = "SLIME_OBJECT"
     this.x = x
     this.y = y
     this.truex = x
-    this.image = document.querySelector("#basic_slime")
+    this.image = "basic_slime"
     this.w = 128
     this.h = 128
     this.SPEED = 2.25
@@ -27,20 +42,27 @@ var SlimeBasic = function (x, y) {
                 if(this.health == 0) {
                     game.gos.objects.splice(tio, 1);
                     points++;
-					/*var dropchance = Math.floor((Math.random() * 10) + 1);
+                    var dropchance = Math.floor((Math.random() * 10) + 1);
                     switch(dropchance){
                     case 10:
-                    game.gos.objects.push(new Coin(this.x, this.y));
-                    game.gos.objects.push(new Coin(this.x - 4, this.y));
+                    game.gos.objects.push(new Coin(this.x + 50, 600));
+                    game.gos.objects.push(new Coin(this.x + 90, 600));
                         break;
                     case 9:
-                    game.gos.objects.push(new Coin(this.x, this.y));
-                    game.gos.objects.push(new Heart(this.x - 4, this.y));
+                    game.gos.objects.push(new Coin(this.x, + 50, 600));
+                    game.gos.objects.push(new Heart(this.x + 90, 600));
                         break;
-                    case 8, 7, 6, 5, 4, 3, 2, 1:
-                    game.gos.objects.push(new Coin(this.x, this.y));
+                    case 8:
+                    case 7:
+                    case 6:
+                    case 5:
+                    case 4:
+                    case 3:
+                    case 2:
+                    case 1:
+                    game.gos.objects.push(new Coin(this.x + 50, 600));
                         break;
-                    }*/
+                    }
                     game.gos.needtokill--;
                 }
             } else {

@@ -4,8 +4,23 @@
     All Rights Reserved
 
     And, we hope you have fun!
+
+    This file is part of Splat!.
+
+    Splat! is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Splat! is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Splat!.  If not, see <http://www.gnu.org/licenses/>.
 */
-var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, points = 0
+var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, points = 0, coins = 0
 
 // Zoneclick - Check wether a click happened within a zone on the screen.
 var zoneclick = function (zonex, zoney, width, height, clickx, clicky) {
@@ -53,7 +68,7 @@ screens = [
                 this.music = null
             }
             var loc = 250
-            loc = 250 - Math.floor(this.ticks / 3)
+            loc = 250 - Math.floor(this.ticks / 4)
             if(loc < -1070) {
                 if(loc === -1070) {
                     logcon("Credits YPosFreeze")
@@ -61,7 +76,7 @@ screens = [
                 loc = -1070
             }
             ctx.drawImage(document.querySelector("#credits"), 0, loc)
-            if(this.ticks > 4400) {
+            if(this.ticks > 5600) {
                 logcon("Credits End")
                 this.ticks = 0
                 this.music = "percussionparadise"
@@ -71,7 +86,7 @@ screens = [
     },
     { // Whining Screen
         name: "WINNING_SCREEN",
-        music: "smokemachine",
+        music: "Resounding_Success",
         update: function () {
             if(this.ticks === 0) {
                 logcon("Win Screen Initiated")
@@ -84,7 +99,7 @@ screens = [
     },
     { // Losing Screen
         name: "LOSING_SCREEN",
-        music: "smokemachine",
+        music: "Always_Next_Time",
         update: function () {
             if(this.ticks === 0) {
                 logcon("Loss Screen Initiated")
@@ -94,6 +109,39 @@ screens = [
             ctx.font = "70px sans-serif";
             ctx.fillText(points, 220, 300);
         }
+    },
+    {
+        name: "LEVEL_SELECT",
+        music: "",
+        update: function () {
+            if(this.ticks == 0) {
+                logcon("Level Select Initiated")
+            }
+            ctx.drawImage(document.querySelector("#levelselect"), 0, 0)
+        },
+        mouseup: function (x, y) {
+            if(zoneclick(38, 40, 66, 62, x, y)) {
+                change_screen(1);
+                game.level = 1;
+                game.loadLevel = true;
+            } else if(zoneclick(162, 40, 66, 62, x, y)) {
+                change_screen(1);
+                game.level = 2;
+                game.loadLevel = true;
+            } else if(zoneclick(281, 40, 66, 62, x, y)) {
+                change_screen(1);
+                game.level = 3;
+                game.loadLevel = true;
+            } /*else if(zoneclick(398, 40, 66, 62, x, y)) {
+                change_screen(1);
+                game.level = 4;
+                game.loadLevel = true;
+            } else if(zoneclick(38, 136, 66, 62, x, y)) {
+                change_screen(1);
+                game.level = 5;
+                game.loadLevel = true;
+            }*/
+        }
     }
 ]
 
@@ -102,6 +150,9 @@ var change_screen = function (x) {
     nomusic()
     pscreenid = screenid // Assign Previous Screen ID for errors.
     screenid = x // Assign Current Screen ID to requested ID
+}
+var level_select = function () {
+    change_screen(4)
 }
 
 // Chunk String - From http://stackoverflow.com/questions/1772941/how-can-i-insert-a-character-after-every-n-characters-in-javascript
@@ -209,6 +260,6 @@ window.onload = function () {
         var e = "ERROR IN: " + url.replace(/^.*[\\\/]/, '') + ":" + ln + "\n" + msg
         error = e
         logcon(e)
-        logcon("THE CURSE OF THE HUTT-SLIME IS UPON US!!!!!!!!!")
+        logcon("THE CURSE OF TARAN IS UPON US!!!!!!!!!")
     }
 }
