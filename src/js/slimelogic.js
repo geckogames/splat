@@ -34,7 +34,7 @@ var slimelogic = {
         var max_dir = it.path_distance / 2; // Max for either directory
         var direction = (it.current_path_index > max_dir) ? -1 : 1;
         it.current_path_index = (it.current_path_index + 1) % it.path_distance;
-        it.x = it.x + direction * it.speed;
+        it.x = it.x + direction * it.SPEED;
 	},
     player_intersects: function (it) {
         return (((game.gos.objects[0].x > it.x && game.gos.objects[0].x < it.x + 128) || (game.gos.objects[0].x + 128 > it.x && game.gos.objects[0].x + 128 < it.x + 128)) && (game.gos.objects[0].y + 128 >= it.y && game.gos.objects[0].y <= it.y + 128));
