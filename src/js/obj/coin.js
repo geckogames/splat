@@ -24,15 +24,14 @@ var Coin = function (x, y) {
     this.name = "COIN_OBJECT"
     this.x = x
     this.y = y
-    this.truex = x
     this.image = "coin";
     this.w = 32
     this.h = 32
     this.update = function () {
         var tio = game.gos.objects.indexOf(this);
-        if (((game.gos.objects[0].x > this.x && game.gos.objects[0].x < this.x + 32) || (game.gos.objects[0].x + 32 > this.x && game.gos.objects[0].x + 32 < this.x + 32)) && (game.gos.objects[0].y + 32 >= this.y && game.gos.objects[0].y <= this.y + 32)){
+        if (slimelogic.player_intersects(this)) {
             coins++;
-            game.gos.objects.splice(tio, 1);
+            game.gos.objects.splice(tio, 1)
         }
     };
 };

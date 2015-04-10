@@ -24,7 +24,6 @@ var Bush = function (x, y) {
     this.name = "BUSH_OBJECT";
     this.x = x;
     this.y = y;
-    this.truex = x;
     this.image = "bush";
     this.w = 200;
     this.h = 200;

@@ -21,22 +21,40 @@
     along with Splat!.  If not, see <http://www.gnu.org/licenses/>.
 */
 var slimelogic = {
-    movetowardsplayer: function (playerx, slimex, realx, SPEED) {
-        if(slimex != playerx) {
-            realx += (playerx > slimex) ? SPEED : -SPEED;
-            slimex = Math.floor(realx);
+    movetowardsplayer: function (it) {
+        if(it.x != game.gos.objects[0].x) {
+            it.truex += (game.gos.objects[0].x > it.x) ? it.SPEED : -it.SPEED;
+            it.x = Math.floor(it.truex);
         }
-        return {
-            truex: realx,
-            x: slimex
-        };
     },
-    path_movement: function (cur_ind, max, speed, x) {
+    path_movement: function (it) {
         // calculate difference movement on a back-and-forth path
-        // cur_ind maximum is double 'max'
+        // current_path_index maximum is double path_distance
         // max is the maximum x
-        var max_dir = max / 2; // Max for either directory
-        var direction = (cur_ind > max_dir) ? -1 : 1;
-        return { new_index: (cur_ind + 1) % max, new_x: x + direction * speed }; // Return new relative location
-	}
+        var max_dir = it.path_distance / 2; // Max for either directory
+        var direction = (it.current_path_index > max_dir) ? -1 : 1;
+        it.current_path_index = (it.current_path_index + 1) % it.path_distance;
+        it.x = it.x + direction * it.SPEED;
+	},
+    player_intersects: function (it) {
+        return (((game.gos.objects[0].x > it.x && game.gos.objects[0].x < it.x + 128) || (game.gos.objects[0].x + 128 > it.x && game.gos.objects[0].x + 128 < it.x + 128)) && (game.gos.objects[0].y + 128 >= it.y && game.gos.objects[0].y <= it.y + 128));
+    },
+    pi_handler: function (it) {
+        var tio = game.gos.objects.indexOf(it);
+        if (this.player_intersects(it)) {
+            if(iskeydown(keybindings.ATTACK)) {
+                it.health--;
+                if(it.health == 0) {
+                    game.gos.objects.splice(tio, 1);
+                    points++;
+                    game.gos.needtokill--;
+                }
+            } else {
+                if (game.gos.objects[0].y >= it.y) {
+                    game.gos.objects[0].bouncy();
+                }
+                game.gos.objects[0].dodamage();
+            }
+        }
+    }
 };

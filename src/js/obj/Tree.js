@@ -24,7 +24,6 @@ var Tree = function (x, y) {
     this.name = "TREE_OBJECT"
     this.x = x
     this.y = y
-    this.truex = x
     this.image = "tree"
     this.w = 400
     this.h = 400

@@ -86,7 +86,7 @@ screens = [
     },
     { // Whining Screen
         name: "WINNING_SCREEN",
-        music: "smokemachine",
+        music: "Resounding_Success",
         update: function () {
             if(this.ticks === 0) {
                 logcon("Win Screen Initiated")
@@ -99,7 +99,7 @@ screens = [
     },
     { // Losing Screen
         name: "LOSING_SCREEN",
-        music: "smokemachine",
+        music: "Always_Next_Time",
         update: function () {
             if(this.ticks === 0) {
                 logcon("Loss Screen Initiated")
