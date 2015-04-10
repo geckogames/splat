@@ -32,7 +32,7 @@ var Heart = function (x, y) {
         var tio = game.gos.objects.indexOf(this);
         if (slimelogic.player_intersects(this)) {
             points++;
-            game.gos.objects[0].lives++;
+            lives++;
             game.gos.objects.splice(tio, 1)
         }
     };

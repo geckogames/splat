@@ -65,7 +65,7 @@ screens[1] = {
         ctx.drawImage(document.querySelector("#" + game.gos.objects[0].image), 200, game.gos.objects[0].y - 50)
         // ctx.drawImage(document.querySelector("#grass"), 0, 0); DELETE
         var icowidth_and_spacing = 35; var heart_i = 0;
-        while (heart_i < game.gos.objects[0].lives) {
+        while (heart_i < lives) {
             ctx.drawImage(document.querySelector("#heartimg"), icowidth_and_spacing * heart_i++ + 10, 10);
         }
         ctx.drawImage(document.querySelector("#coin"), 380, 10);
