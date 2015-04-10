@@ -57,3 +57,13 @@ center {
     left: 10px;
     top: 10px;
 }
+
+.mute-unmute {
+    background-color: #777;
+    color: #eee;
+    font-size: 20px;
+    border: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}

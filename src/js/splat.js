@@ -193,13 +193,28 @@ var iskeydown = function (keycode) {
     return (keys.indexOf(keycode) > -1)
 }
 
+/* From: http://diveintohtml5.info/storage.html */
+function supports_html5_storage() {
+    try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        return false;
+    }
+}
+
 var mute = function (opt) {
     nomusic();
     muted = opt;
+    if(supports_html5_storage()) {
+        localStorage.muted = opt;
+    }
 }
 
 // Window Onload - Triggered on page load (duh)
 window.onload = function () {
+    if(supports_html5_storage() && localStorage.muted) {
+        muted = JSON.parse(localStorage.muted);
+    }
     window.scrollTo(0, 0)
     cv = document.querySelector("#splatvas")
     ctx = cv.getContext("2d")
