@@ -104,7 +104,7 @@ screens = [
         },
         mouseup: function (x, y) {
             if(zoneclick(144, 420, 216, 69)){
-                change_screen(5);
+                change_screen(6);
             } else if(zoneclick(38, 40, 66, 62, x, y)) {
                 change_screen(1);
                 game.level = 1;
@@ -133,7 +133,7 @@ screens = [
         music: "FlyingTime",
         update: function () {
             if(this.ticks == 0) {
-                logcon("Level Select Initiated")
+                logcon("Shop Initiated")
             }
             ctx.drawImage(document.querySelector("#shop"), 0, 0)
         }
