@@ -48,4 +48,12 @@ textarea {
 center {
     background-color: #f7f7f7;
     padding: 5px;
+    font-size: 16;
+}
+
+.ghimage {
+    display: block;
+    position: fixed;
+    left: 10px;
+    top: 10px;
 }
