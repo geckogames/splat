@@ -49,3 +49,10 @@ center {
     background-color: #f7f7f7;
     padding: 5px;
 }
+
+.ghimage {
+    display: block;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+}
