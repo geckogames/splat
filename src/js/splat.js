@@ -103,7 +103,7 @@ screens = [
             ctx.drawImage(document.querySelector("#levelselect"), 0, 0)
         },
         mouseup: function (x, y) {
-            if(zoneclick(144, 420, 216, 69)){
+            if(zoneclick(144, 420, 216, 69, x, y)) {
                 change_screen(6);
             } else if(zoneclick(38, 40, 66, 62, x, y)) {
                 change_screen(1);
