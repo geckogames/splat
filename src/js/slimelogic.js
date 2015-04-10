@@ -47,6 +47,27 @@ var slimelogic = {
                 if(it.health == 0) {
                     game.gos.objects.splice(tio, 1);
                     points++;
+                    var dropchance = Math.floor((Math.random() * 10) + 1);
+                    switch(dropchance){
+                    case 10:
+                    game.gos.objects.push(new Coin(it.x + 90, 400));
+                    game.gos.objects.push(new Coin(it.x + 50, 400));
+                        break;
+                    case 9:
+                    game.gos.objects.push(new Coin(it.x + 90, 400));
+                    game.gos.objects.push(new Heart(it.x + 50, 400));
+                        break;
+                    case 8:
+                    case 7:
+                    case 6:
+                    case 5:
+                    case 4:
+                    case 3:
+                    case 2:
+                    case 1:
+                    game.gos.objects.push(new Coin(it.x + 50, 400));
+                        break;
+                    }
                     game.gos.needtokill--;
                 }
             } else {
