@@ -68,5 +68,9 @@ screens[1] = {
         while (heart_i < game.gos.objects[0].lives) {
             ctx.drawImage(document.querySelector("#heartimg"), icowidth_and_spacing * heart_i++ + 10, 10);
         }
+        ctx.drawImage(document.querySelector("#coin"), 380, 10);
+        ctx.font = "32px sans-serif";
+        ctx.fillStyle = "Yellow";
+        ctx.fillText(coins, 420, 36);
     }
 }
