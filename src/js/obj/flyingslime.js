@@ -24,6 +24,7 @@ var SlimeFlying = function (x, y) {
     this.name = "FLYING_SLIME_OBJECT"
     this.x = x
     this.y = y
+    this.truex = x
     this.image = "flying_slime";
     this.w = 128
     this.h = 128

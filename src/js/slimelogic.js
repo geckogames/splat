@@ -23,7 +23,7 @@
 var slimelogic = {
     movetowardsplayer: function (it) {
         if(it.x != game.gos.objects[0].x) {
-            it.truex += (game.gos.objects[0].x > it.x) ? it.speed : -it.speed;
+            it.truex += (game.gos.objects[0].x > it.x) ? it.SPEED : -it.SPEED;
             it.x = Math.floor(it.truex);
         }
     },
