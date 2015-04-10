@@ -29,5 +29,11 @@ var Heart = function (x, y) {
     this.w = 32
     this.h = 32
     this.update = function () {
+        var tio = game.gos.objects.indexOf(this);
+        if (slimelogic.player_intersects(this)) {
+            points++;
+            game.gos.objects[0].lives++;
+            game.gos.objects.splice(tio, 1)
+        }
     };
 };
