@@ -30,10 +30,8 @@ var Coin = function (x, y) {
     this.update = function () {
         var tio = game.gos.objects.indexOf(this);
         if (slimelogic.player_intersects(this)) {
-            if(iskeydown(keybindings.ATTACK)){
-                coins++;
-                //game.gos.objects.splice(tio, 1)
-            }
+            coins++;
+            game.gos.objects.splice(tio, 1)
         }
     };
 };
