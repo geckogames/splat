@@ -31,7 +31,7 @@ var SlimeLearning = function (x, y) {
     this.SPEED = 1
     this.health = 4;
     this.update = function () {
-        slimelogic.movetowardsplayer(it);
+        slimelogic.movetowardsplayer(this);
         slimelogic.pi_handler(this);
     }
 }
