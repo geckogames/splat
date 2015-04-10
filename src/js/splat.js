@@ -98,12 +98,14 @@ screens = [
     },
     {
         name: "LEVEL_SELECT",
-        music: "",
+        music: "FlyingTime",
         update: function () {
             ctx.drawImage(document.querySelector("#levelselect"), 0, 0)
         },
         mouseup: function (x, y) {
-            if(zoneclick(38, 40, 66, 62, x, y)) {
+            if(zoneclick(144, 420, 216, 69)){
+                change_screen(5);
+            } else if(zoneclick(38, 40, 66, 62, x, y)) {
                 change_screen(1);
                 game.level = 1;
                 game.loadLevel = true;
@@ -124,6 +126,16 @@ screens = [
                 game.level = 5;
                 game.loadLevel = true;
             }*/
+        }
+    },
+    {
+        name: "SHOP",
+        music: "FlyingTime",
+        update: function () {
+            if(this.ticks == 0) {
+                logcon("Level Select Initiated")
+            }
+            ctx.drawImage(document.querySelector("#shop"), 0, 0)
         }
     }
 ]
