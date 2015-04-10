@@ -24,12 +24,12 @@ var SlimeSwarm = function (x, y) {
     this.name = "SWARM_SLIME_OBJECT"
     this.x = x
     this.y = y
-    this.image = "swarm_slime"
+    this.image = "swarmslime"
     this.w = 128
     this.h = 128
-    this.SPEED = 5
+    this.SPEED = 3.5
     this.current_path_index = 5;
-    this.health = 1;
+    this.health = 4;
     this.path_distance = 300;
     this.update = function () {
         slimelogic.path_movement(this);
