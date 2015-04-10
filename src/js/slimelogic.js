@@ -42,7 +42,7 @@ var slimelogic = {
     pi_handler: function (it) {
         var tio = game.gos.objects.indexOf(it);
         if (this.player_intersects(it)) {
-            if(iskeydown(keybindings.ATTACK)) {
+            if(iskeydown(keybindings.ATTACK) && !it.unkillable) {
                 it.health--;
                 if(it.health == 0) {
                     game.gos.objects.splice(tio, 1);
