@@ -105,6 +105,10 @@ var Player = function (x, y) {
     this.bouncy = function () {
         if (this.velocity_y > -3) {
             this.velocity_y = -3;
+            this.image = "guyhurt"
+            setTimeout(function () {
+                game.gos.objects[0].image = "guy"
+            }, 75);
         }
     }
 }
