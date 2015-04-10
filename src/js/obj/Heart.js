@@ -24,7 +24,6 @@ var Heart = function (x, y) {
     this.name = "HEART_OBJECT"
     this.x = x
     this.y = y
-    this.truex = x
     this.image = "heart";
     this.w = 32
     this.h = 32
