@@ -33,6 +33,13 @@ Your changes must comply to these rules:
 1. You do not add partially finished features and plots.
 1. You add music and a background for any levels you make.
 
+### gh-pages
+The gh-pages branch on the splat repository is not always up-to-date with master.
+This may be because the current master has bugs, or because we forgot to update
+it.
+To update your gh-pages branch, make sure all changes are committed and then run
+the `update-website` bash script from the main directory in the master branch.
+
 ## Licenses
 To protect our code and encourage user freedom, as well as creative freedom, we have licensed our code and assets under licenses for these purposes:
 ### Assets License
