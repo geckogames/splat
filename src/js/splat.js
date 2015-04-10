@@ -20,7 +20,7 @@
     You should have received a copy of the GNU General Public License
     along with Splat!.  If not, see <http://www.gnu.org/licenses/>.
 */
-var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, points = 0, coins = 0
+var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, points = 0, coints = 0
 
 // Zoneclick - Check wether a click happened within a zone on the screen.
 var zoneclick = function (zonex, zoney, width, height, clickx, clicky) {

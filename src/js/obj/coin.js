@@ -30,6 +30,7 @@ var Coin = function (x, y) {
     this.update = function () {
         var tio = game.gos.objects.indexOf(this);
         if (slimelogic.player_intersects(this)) {
+            points++;
             coins++;
             game.gos.objects.splice(tio, 1)
         }
