@@ -20,7 +20,7 @@
     You should have received a copy of the GNU General Public License
     along with Splat!.  If not, see <http://www.gnu.org/licenses/>.
 */
-var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, points = 0, coins = 0, levelscomplete = 0
+var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, points = 0, coins = 0, levelscomplete = 0, muted = false
 
 // Zoneclick - Check wether a click happened within a zone on the screen.
 var zoneclick = function (zonex, zoney, width, height, clickx, clicky) {
@@ -193,6 +193,11 @@ var iskeydown = function (keycode) {
     return (keys.indexOf(keycode) > -1)
 }
 
+var mute = function (opt) {
+    nomusic();
+    muted = opt;
+}
+
 // Window Onload - Triggered on page load (duh)
 window.onload = function () {
     window.scrollTo(0, 0)
@@ -214,7 +219,7 @@ window.onload = function () {
             errorscreen(error)
         } else  {
             screens[screenid].update()
-            if(!glitch && screens[screenid].music) {
+            if(!glitch && screens[screenid].music && !muted) {
                 document.querySelector("#" + screens[screenid].music).play()
             } else if (glitch) {
                 document.querySelector("#glitchmusic").play()
