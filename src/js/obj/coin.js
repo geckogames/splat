@@ -30,11 +30,9 @@ var Coin = function (x, y) {
     this.h = 32
     this.update = function () {
         var tio = game.gos.objects.indexOf(this);
-        if (((game.gos.objects[0].x > this.x && game.gos.objects[0].x < this.x + 16) || (game.gos.objects[0].x + 16 > this.x && game.gos.objects[0].x + 16 < this.x + 16)) && (game.gos.objects[0].y + 16 >= this.y && game.gos.objects[0].y <= this.y + 16)){
-            if(iskeydown(keybindings.ATTACK)){
+        if (((game.gos.objects[0].x > this.x && game.gos.objects[0].x < this.x + 32) || (game.gos.objects[0].x + 32 > this.x && game.gos.objects[0].x + 32 < this.x + 32)) && (game.gos.objects[0].y + 32 >= this.y && game.gos.objects[0].y <= this.y + 32)){
             coins++;
-            //game.gos.objects.splice(tio, 1)
-            }
+            game.gos.objects.splice(tio, 1);
         }
     };
 };

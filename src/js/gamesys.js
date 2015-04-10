@@ -61,13 +61,15 @@ screens[1] = {
         game.gos.objects[0].update(game.gos, this.ticks)
         for(var i = 1; i < game.gos.objects.length; i++) {
             game.gos.objects[i].update(game.gos, this.ticks)
-            ctx.drawImage(document.querySelector("#" + game.gos.objects[i].image), game.gos.objects[i].x - game.gos.objects[0].x + 200, game.gos.objects[i].y - 50)
+            if (game.gos.objects[i] ) {
+                ctx.drawImage(document.querySelector("#" + game.gos.objects[i].image), game.gos.objects[i].x - game.gos.objects[0].x + 200, game.gos.objects[i].y - 50)
+            }
         }
         ctx.drawImage(document.querySelector("#" + game.gos.objects[0].image), 200, game.gos.objects[0].y - 50)
         // ctx.drawImage(document.querySelector("#grass"), 0, 0); DELETE
         var icowidth_and_spacing = 35; var heart_i = 0;
         while (heart_i < game.gos.objects[0].lives) {
-            ctx.drawImage(document.querySelector("#heart"), icowidth_and_spacing * heart_i++ + 10, 10);
+            ctx.drawImage(document.querySelector("#heartimg"), icowidth_and_spacing * heart_i++ + 10, 10);
         }
     }
 }

@@ -45,12 +45,12 @@ var SlimeBasic = function (x, y) {
                     var dropchance = Math.floor((Math.random() * 10) + 1);
                     switch(dropchance){
                     case 10:
-                    game.gos.objects.push(new Coin(this.x + 50, 600));
-                    game.gos.objects.push(new Coin(this.x + 90, 600));
+                    game.gos.objects.push(new Coin(this.x, 400));
+                    game.gos.objects.push(new Coin(this.x + 50, 400));
                         break;
                     case 9:
-                    game.gos.objects.push(new Coin(this.x, + 50, 600));
-                    game.gos.objects.push(new Heart(this.x + 90, 600));
+                    game.gos.objects.push(new Coin(this.x, 400));
+                    game.gos.objects.push(new Heart(this.x + 50, 400));
                         break;
                     case 8:
                     case 7:
@@ -60,7 +60,7 @@ var SlimeBasic = function (x, y) {
                     case 3:
                     case 2:
                     case 1:
-                    game.gos.objects.push(new Coin(this.x + 50, 600));
+                    game.gos.objects.push(new Coin(this.x, 400));
                         break;
                     }
                     game.gos.needtokill--;
