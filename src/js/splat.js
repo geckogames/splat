@@ -20,7 +20,7 @@
     You should have received a copy of the GNU General Public License
     along with Splat!.  If not, see <http://www.gnu.org/licenses/>.
 */
-var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, con, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, points = 0, coins = 0, levelscomplete = 0
+var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, points = 0, coins = 0, levelscomplete = 0
 
 // Zoneclick - Check wether a click happened within a zone on the screen.
 var zoneclick = function (zonex, zoney, width, height, clickx, clicky) {
@@ -59,25 +59,17 @@ screens = [
         music: "percussionparadise",
         ticks: 0,
         update: function () {
-            if(this.ticks === 0) {
-                logcon("Credits Initiated")
-            }
             this.ticks++
             if(this.ticks === 20) {
-                logcon("Credits Music set null (prevents loop)")
                 this.music = null
             }
             var loc = 250
             loc = 250 - Math.floor(this.ticks / 4)
             if(loc < -1070) {
-                if(loc === -1070) {
-                    logcon("Credits YPosFreeze")
-                }
                 loc = -1070
             }
             ctx.drawImage(document.querySelector("#credits"), 0, loc)
             if(this.ticks > 5600) {
-                logcon("Credits End")
                 this.ticks = 0
                 this.music = "percussionparadise"
                 change_screen(0)
@@ -88,9 +80,6 @@ screens = [
         name: "WINNING_SCREEN",
         music: "Resounding_Success",
         update: function () {
-            if(this.ticks === 0) {
-                logcon("Win Screen Initiated")
-            }
             ctx.drawImage(document.querySelector("#winning"), 0, 0)
             ctx.fillStyle = "#fff";
             ctx.font = "70px sans-serif";
@@ -101,9 +90,6 @@ screens = [
         name: "LOSING_SCREEN",
         music: "Always_Next_Time",
         update: function () {
-            if(this.ticks === 0) {
-                logcon("Loss Screen Initiated")
-            }
             ctx.drawImage(document.querySelector("#losing"), 0, 0)
             ctx.fillStyle = "#fff";
             ctx.font = "70px sans-serif";
@@ -114,9 +100,6 @@ screens = [
         name: "LEVEL_SELECT",
         music: "FlyingTime",
         update: function () {
-            if(this.ticks == 0) {
-                logcon("Level Select Initiated")
-            }
             ctx.drawImage(document.querySelector("#levelselect"), 0, 0)
         },
         mouseup: function (x, y) {
@@ -204,12 +187,6 @@ var nomusic = function () {
         audios[i].pause()
         audios[i].currentTime = 0
     }
-    logcon("Music Cleared.")
-}
-
-var logcon = function (text) {
-    con.innerHTML += text + "\n"
-    con.scrollTop = con.scrollHeight - con.clientHeight
 }
 
 var iskeydown = function (keycode) {
@@ -224,8 +201,6 @@ window.onload = function () {
     cvtop = cv.getBoundingClientRect().top
     cvleft = cv.getBoundingClientRect().left
     ctx.font = "18px monospace"
-    con = document.querySelector("#textarea")
-    logcon("Splat! Initiated.")
     // SING IT TO THE WORLD...
     var goodidea = false;
     // ...YUP!
@@ -271,7 +246,5 @@ window.onload = function () {
     window.onerror = function (msg, url, ln) {
         var e = "ERROR IN: " + url.replace(/^.*[\\\/]/, '') + ":" + ln + "\n" + msg
         error = e
-        logcon(e)
-        logcon("THE CURSE OF TARAN IS UPON US!!!!!!!!!")
     }
 }
