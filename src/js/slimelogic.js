@@ -61,6 +61,7 @@ var slimelogic = {
                     case 7:
                     case 6:
                     case 5:
+                        game.gos.objects.push(new Heart(it.x + 50, 400));
                     case 4:
                     case 3:
                     case 2:
