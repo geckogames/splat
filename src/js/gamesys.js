@@ -30,8 +30,6 @@ var SplatGame = function (gos) {
         new level_2(),
         new level_3()
     ]
-    logcon("Gameplay Initiated.")
-    logcon("Game Object System: \"" + this.gos.name + "\"")
 }
 var game
 screens[1] = {
@@ -54,7 +52,6 @@ screens[1] = {
         this.ticks++;
         if(game.loadLevel) {
             game.loadLevel = false
-            logcon("Loading Level: " + game.levels[game.level].name)
             game.gos.loadLevel(game.levels[game.level])
         }
         ctx.drawImage(document.querySelector("#" + game.levels[game.level].bgimg), 0 - game.gos.objects[0].x, 0)
