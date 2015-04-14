@@ -104,7 +104,9 @@ screens = [
         },
         mouseup: function (x, y) {
             if(zoneclick(144, 420, 216, 69, x, y)) {
-                change_screen(6);
+                if (confirm ("Shop is still in the works! You might not be able to leave! Are you sure you want to go there!?")) {
+                 change_screen(6);
+                }
             } else if(zoneclick(38, 40, 66, 62, x, y)) {
                 change_screen(1);
                 game.level = 1;
