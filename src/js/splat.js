@@ -104,24 +104,26 @@ screens = [
         },
         mouseup: function (x, y) {
             if(zoneclick(144, 420, 216, 69, x, y)) {
-                change_screen(6);
-            } else if(zoneclick(38, 40, 66, 62, x, y)) {
+                if (confirm ("Shop is still in the works and doesn't do much! Are you sure you want to go there!?")) {
+                 change_screen(6);
+                }
+            } else if(zoneclick(38, 40, 66, 62, x, y) && levelscomplete >= 1) {
                 change_screen(1);
                 game.level = 1;
                 game.loadLevel = true;
-            } else if(zoneclick(162, 40, 66, 62, x, y)) {
+            } else if(zoneclick(162, 40, 66, 62, x, y) && levelscomplete >= 2) {
                 change_screen(1);
                 game.level = 2;
                 game.loadLevel = true;
-            } else if(zoneclick(281, 40, 66, 62, x, y)) {
+            } else if(zoneclick(281, 40, 66, 62, x, y) && levelscomplete >= 3) {
                 change_screen(1);
                 game.level = 3;
                 game.loadLevel = true;
-            } /*else if(zoneclick(398, 40, 66, 62, x, y)) {
+            } /*else if(zoneclick(398, 40, 66, 62, x, y) && levelscomplete >= 4) {
                 change_screen(1);
                 game.level = 4;
                 game.loadLevel = true;
-            } else if(zoneclick(38, 136, 66, 62, x, y)) {
+            } else if(zoneclick(38, 136, 66, 62, x, y) && levelscomplete >= 5) {
                 change_screen(1);
                 game.level = 5;
                 game.loadLevel = true;
@@ -137,6 +139,12 @@ screens = [
             }
 			//if(zoneclick())
             ctx.drawImage(document.querySelector("#shop"), 0, 0)
+            ctx.drawImage(document.querySelector("#hammer"), 59, 20)
+        },
+        mouseup: function (x, y){
+            if (zoneclick(133, 407, 237, 87, x, y)){
+                change_screen(5);
+            }
         }
     }
 ]

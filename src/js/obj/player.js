@@ -90,7 +90,7 @@ var Player = function (x, y) {
                 this.x = game.levels[game.level].width - 500
             } else if(game.level < game.levels.length - 1) {
                 change_screen(5);
-                levelscomplete++
+                levelscomplete++;
             } else {
                 nomusic();
                 screenid = 3;
