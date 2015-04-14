@@ -34,5 +34,12 @@ var SlimeBasic = function (x, y) {
     this.update = function () {
         slimelogic.path_movement(this);
         slimelogic.pi_handler(this);
+		  /*this.bouncy = function () {
+        if (this.velocity_y > -3) {
+            this.velocity_y = -3;
+            this.image = "slimedead"
+            setTimeout(function () {
+                game.gos.objects[0].image = "basic_alime"
+            }, 75);*/
     }
 }

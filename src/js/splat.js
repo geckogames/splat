@@ -130,11 +130,12 @@ screens = [
     },
     {
         name: "SHOP",
-        music: "FlyingTime",
+        music: "Shop",
         update: function () {
             if(this.ticks == 0) {
                 logcon("Shop Initiated")
             }
+			//if(zoneclick())
             ctx.drawImage(document.querySelector("#shop"), 0, 0)
         }
     }
