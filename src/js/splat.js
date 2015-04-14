@@ -103,8 +103,10 @@ screens = [
             ctx.drawImage(document.querySelector("#levelselect"), 0, 0)
         },
         mouseup: function (x, y) {
-            if(zoneclick(144, 420, 216, 69, x, y)){
-                change_screen(6);
+            if(zoneclick(144, 420, 216, 69, x, y)) {
+                if (confirm ("Shop is still in the works! You might not be able to leave! Are you sure you want to go there!?")) {
+                 change_screen(6);
+                }
             } else if(zoneclick(38, 40, 66, 62, x, y) && levelscomplete >= 1) {
                 change_screen(1);
                 game.level = 1;
@@ -130,7 +132,7 @@ screens = [
     },
     {
         name: "SHOP",
-        music: "FlyingTime",
+        music: "Shop",
         update: function () {
             if(this.ticks == 0) {
                 logcon("Shop Initiated")
