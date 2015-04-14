@@ -137,6 +137,7 @@ screens = [
             if(this.ticks == 0) {
                 logcon("Shop Initiated")
             }
+			//if(zoneclick())
             ctx.drawImage(document.querySelector("#shop"), 0, 0)
             ctx.drawImage(document.querySelector("#hammer"), 59, 20)
         },
