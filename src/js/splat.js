@@ -119,11 +119,11 @@ screens = [
                 change_screen(1);
                 game.level = 3;
                 game.loadLevel = true;
-            } /*else if(zoneclick(398, 40, 66, 62, x, y) && levelscomplete >= 4) {
+            } else if(zoneclick(398, 40, 66, 62, x, y) && levelscomplete >= 4) {
                 change_screen(1);
                 game.level = 4;
                 game.loadLevel = true;
-            } else if(zoneclick(38, 136, 66, 62, x, y) && levelscomplete >= 5) {
+            } /*else if(zoneclick(38, 136, 66, 62, x, y) && levelscomplete >= 5) {
                 change_screen(1);
                 game.level = 5;
                 game.loadLevel = true;
