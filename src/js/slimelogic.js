@@ -36,9 +36,9 @@ var slimelogic = {
         it.current_path_index = (it.current_path_index + 1) % it.path_distance;
         it.x = it.x + direction * it.SPEED;
         if (it.direction === -1){
-            it.image = "inv_slime_basic";
-        } else {
-            it.image = "slime_basic";
+            it.image = "inv_slime_basic"
+        } else if (it.direction === 1){
+            it.image = "basic_slime"
         }
 	},
     player_intersects: function (it) {

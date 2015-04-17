@@ -107,6 +107,8 @@ screens = [
                 if (confirm ("Shop is still in the works and doesn't do much! Are you sure you want to go there!?")) {
                  change_screen(6);
                 }
+            } else if(zoneclick(416, 427, 46, 55, x, y)){
+                change_screen(0);
             } else if(zoneclick(38, 40, 66, 62, x, y) && levelscomplete >= 1) {
                 change_screen(1);
                 game.level = 1;
