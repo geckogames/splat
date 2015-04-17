@@ -116,3 +116,35 @@ var level_3 = function () {
     ];
     this.needtokill = 6;
 }
+var level_4 = function () {
+    //Level 4 Boss Level
+    this.name = "LEVEL_4_BOSS";
+    this.music = "glitchmusic";
+    this.bgimg = "bossback";
+    this.width = 4000;
+    this.objects = [
+        new Player(0, -100),
+        new Bush2(400, 500 - 128),
+		new Bush2(50, 650 - 128),
+        new Bush2(430, 500 - 128),
+		new Tree(200, 500 - 256),
+		new Tree(700, 500 - 256),
+		new Tree(800, 500 - 256),
+		new Tree(1500, 500 - 256),
+		new Tree(1800, 500 - 256),
+		new Tree(1300, 500 - 256),
+		new Bush2(100, 500 - 128),
+		new Bush2(1200, 500 - 128),
+        new SlimeSwarm(300, 500 - 128),
+        new SlimeLearning(400, 500 - 128),
+        new SlimeSwarm(800, 500 - 128),
+		new SlimeFlying(400, 100),
+		new SlimeFlying(1150, 200),
+        new SlimeSwarm(600, 500 - 128),
+		new SlimeSwarm(1000, 500 - 128),
+		new SlimeSwarm(1300, 500 - 128),
+		new SlimeTrap(3000, 500 - 128),
+        new NullObject()
+    ];
+    this.needtokill = 6;
+}

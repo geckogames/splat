@@ -39,7 +39,7 @@ var SlimeBasic = function (x, y) {
             this.velocity_y = -3;
             this.image = "slimedead"
             setTimeout(function () {
-                game.gos.objects[0].image = "basic_alime"
+                game.gos.objects[0].image = "basic_slime"
             }, 75);*/
     }
 }

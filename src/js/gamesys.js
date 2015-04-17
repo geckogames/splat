@@ -28,7 +28,8 @@ var SplatGame = function (gos) {
         new level_tutorial(),
         new level_basic(),
         new level_2(),
-        new level_3()
+        new level_3(),
+        new level_4()
     ]
 }
 var game
