@@ -108,7 +108,7 @@ screens = [
                  change_screen(6);
                 }
             } else if(zoneclick(416, 427, 46, 55, x, y)){
-                 if (confirm ("WARNING! This will reset your game!")){
+                 if (confirm ("WARNING! This will force you to replay the tutorial!")){
 				  change_screen(0);
 				 }
             } else if(zoneclick(38, 40, 66, 62, x, y) && levelscomplete >= 1) {
