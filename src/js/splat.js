@@ -142,6 +142,9 @@ screens = [
 			//if(zoneclick())
             ctx.drawImage(document.querySelector("#shop"), 0, 0)
             ctx.drawImage(document.querySelector("#hammer"), 59, 20)
+			ctx.drawImage(document.querySelector("#axe"), 200 , 20)
+			ctx.drawImage(document.querySelector("#torch"), 350, 20)
+			ctx.drawImage(document.querySelector("#sword"), 59, 160)
         },
         mouseup: function (x, y){
             if (zoneclick(133, 407, 237, 87, x, y)){
