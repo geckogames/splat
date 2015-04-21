@@ -20,7 +20,7 @@
     You should have received a copy of the GNU General Public License
     along with Splat!.  If not, see <http://www.gnu.org/licenses/>.
 */
-var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, lives = 5, points = 0, coins = 0, levelscomplete = 0, muted = false
+var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, lives = 5, points = 0, coins = 0, levelscomplete = 0, muted = false, hammer = false, axe = false, sword = false
 
 // Zoneclick - Check wether a click happened within a zone on the screen.
 var zoneclick = function (zonex, zoney, width, height, clickx, clicky) {
@@ -139,9 +139,13 @@ screens = [
             if(this.ticks == 0) {
                 logcon("Shop Initiated")
             }
-			//if(zoneclick())
+			/* if(zoneclick(58, 23, 60, 57, x, y) && coins > 5) {
+                game.gos.objects[0].image = "player_newspaper_hammer";
+                hammer = true;
+            }*/
             ctx.drawImage(document.querySelector("#shop"), 0, 0)
             ctx.drawImage(document.querySelector("#hammer"), 59, 20)
+            ctx.drawImage(document.querySelector("#axe"), 210, 20)
         },
         mouseup: function (x, y){
             if (zoneclick(133, 407, 237, 87, x, y)){
