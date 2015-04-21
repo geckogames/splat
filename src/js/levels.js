@@ -128,5 +128,5 @@ var level_4 = function () {
 		new SlimeBoss(2000, 500 - 800),
         new NullObject()
     ];
-    this.needtokill = 6;
+    this.needtokill = 1;
 }
