@@ -75,8 +75,6 @@ var level_2 = function () {
         new SlimeMutant(300, 500 - 128),
         new SlimeLearning(400, 500 - 128),
         new SlimeMutant(800, 500 - 128),
-		//new SlimeFlying(400, 100),
-		//new SlimeFlying(1150, 200),
         new SlimeMutant(600, 500 - 128),
 		new SlimeMutant(1000, 500 - 128),
 		new SlimeMutant(1300, 500 - 128),
@@ -127,24 +125,8 @@ var level_4 = function () {
         new Bush2(400, 500 - 128),
 		new Bush2(50, 650 - 128),
         new Bush2(430, 500 - 128),
-		new Tree(200, 500 - 256),
-		new Tree(700, 500 - 256),
-		new Tree(800, 500 - 256),
-		new Tree(1500, 500 - 256),
-		new Tree(1800, 500 - 256),
-		new Tree(1300, 500 - 256),
-		new Bush2(100, 500 - 128),
-		new Bush2(1200, 500 - 128),
-        new SlimeSwarm(300, 500 - 128),
-        new SlimeLearning(400, 500 - 128),
-        new SlimeSwarm(800, 500 - 128),
-		new SlimeFlying(400, 100),
-		new SlimeFlying(1150, 200),
-        new SlimeSwarm(600, 500 - 128),
-		new SlimeSwarm(1000, 500 - 128),
-		new SlimeSwarm(1300, 500 - 128),
-		new SlimeTrap(3000, 500 - 128),
+		new SlimeBoss(2000, 500 - 800),
         new NullObject()
     ];
-    this.needtokill = 6;
+    this.needtokill = 1;
 }
