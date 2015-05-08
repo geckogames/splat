@@ -20,11 +20,15 @@
     You should have received a copy of the GNU General Public License
     along with Splat!.  If not, see <http://www.gnu.org/licenses/>.
 */
-var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, lives = 5, points = 0, coins = 0, levelscomplete = 0, muted = false, hammer = false, axe = false, sword = false, test = false
+var cv, ctx, screenid = 0, pscreenid = -1, screens, cvtop, cvleft, error = false, keys = [], dev = true, glitch = false, glitchygcount = 0, glitchyhcount = 0, lives = 5, points = 0, coins = 0, levelscomplete = 0, muted = false, hammer = false, axe = false, sword = false, test = true;
 
 // Zoneclick - Check wether a click happened within a zone on the screen.
 var zoneclick = function (zonex, zoney, width, height, clickx, clicky) {
     return (clickx > zonex - 1 && clickx < zonex + width + 1 && clicky > zoney - 1 && clicky < zoney + height + 1)
+}
+
+var BossClick = function (it){
+    zoneclick(it.x,it.y,800,800,x,y)
 }
 
 screens = [
@@ -104,9 +108,7 @@ screens = [
         },
         mouseup: function (x, y) {
             if(zoneclick(144, 420, 216, 69, x, y)) {
-                if (confirm ("Shop is still in the works and doesn't do anything! All it really has is nice catchy elevator music! Are you sure you want to go there!?")) {
                  change_screen(6);
-                }
             } else if(zoneclick(416, 427, 46, 55, x, y)){
                  if (confirm ("WARNING! This will force you to replay the tutorial!")){
 				  change_screen(0);
@@ -154,6 +156,10 @@ screens = [
             if(zoneclick(58, 23, 60, 57, x, y) && coins > 5) {
                 hammer = true;
                 window.alert("Hammer Bought!")
+            }
+            if(zoneclick(209, 20, 60, 57, x, y) && coins > 10){
+                axe = true;
+                window.alert("Axe Bought!")
             }
         }
     }
