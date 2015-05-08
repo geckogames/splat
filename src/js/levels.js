@@ -113,7 +113,7 @@ var level_3 = function () {
         new SlimeSwarm(600, 500 - 128),
 		new SlimeSwarm(1000, 500 - 128),
 		new SlimeSwarm(1300, 500 - 128),
-        new Spikes(1700, 500, -128)
+        new Spikes(1700, 500, -128),
 		new SlimeTrap(3000, 500 - 128),
         new NullObject()
     ];
