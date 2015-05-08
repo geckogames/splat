@@ -180,6 +180,8 @@ String.prototype.chunk = function(n) {
 
 // Error Screen Function - Draws Error Messages to the Screen
 var errorscreen = function (text) {
+	ctx.font = "18px monospace"
+	ctx.fillStyle = "#000"
     // Split text by lines
     var texts = text.split("\n")
     // Distance between lines on screen (px)
@@ -251,15 +253,14 @@ window.onload = function () {
     ctx = cv.getContext("2d")
     cvtop = cv.getBoundingClientRect().top
     cvleft = cv.getBoundingClientRect().left
-    ctx.font = "18px monospace"
     // SING IT TO THE WORLD...
     var goodidea = false;
     // ...YUP!
     setInterval(function () {
         ctx.clearRect(0,0,500,500)
-        if(!screens[screenid] || !screens[screenid].update) {
+        if(!screens || !screens[screenid] || !screens[screenid].update) {
             nomusic()
-            error = "Attempting to read nonexistent screen: " + screenid + (screens[screenid].name ? " (" + screens[screenid].name + ")" : "") +  "\n" + "Transition triggered by screen: " + pscreenid + (screens[pscreenid].name ? " (" + screens[pscreenid].name + ")" : "")
+            error = "Attempting to read nonexistent screen: " + screenid + "\n" + "Transition triggered by screen: " + pscreenid + (screens[pscreenid].name ? " (" + screens[pscreenid].name + ")" : "")
         }
         if(error) {
             errorscreen(error)
