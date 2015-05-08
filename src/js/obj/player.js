@@ -38,6 +38,11 @@ var Player = function (x, y) {
         if(lives < 0) {
             change_screen(4);
         }
+        if(hammer){
+            this.image = "guy_hammer"
+        } else if (axe){
+            this.image = "guyaxe"
+        }
         if(this.can_move_left_right) {
             if(iskeydown(keybindings.RIGHT) && this.velocity_x > -6) { // Move Right
                 this.velocity_x = 5
@@ -104,9 +109,21 @@ var Player = function (x, y) {
     this.bouncy = function () {
         if (this.velocity_y > -3) {
             this.velocity_y = -3;
-            this.image = "guyhurt"
+            if (hammer){
+                this.image = "guyhurthammer"
+            } else if (axe){
+                this.image = "guyhurtaxe"
+            } else {
+                this.image = "guyhurt"
+            }
             setTimeout(function () {
-                game.gos.objects[0].image = "guy"
+                if (hammer){
+                    game.gos.objects[0].image = "guy_hammer"
+                } else if (axe){
+                    game.gos.objects[0].image = "guyaxe"
+                } else {
+                    game.gos.objects[0].image = "guy"
+                }
             }, 75);
         }
     }
