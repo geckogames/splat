@@ -40,6 +40,8 @@ var Player = function (x, y) {
         }
         if(hammer){
             this.image = "guy_hammer"
+        } else if (axe){
+            this.image = "guyaxe"
         }
         if(this.can_move_left_right) {
             if(iskeydown(keybindings.RIGHT) && this.velocity_x > -6) { // Move Right
