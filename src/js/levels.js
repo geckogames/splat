@@ -119,7 +119,7 @@ var level_4 = function () {
     this.name = "LEVEL_4_BOSS";
     this.music = "glitchmusic";
     this.bgimg = "bossback";
-    this.width = 4000;
+    this.width = 2500;
     this.objects = [
         new Player(0, -100),
         new Bush2(400, 500 - 128),
