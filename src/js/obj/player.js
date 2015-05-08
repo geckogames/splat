@@ -86,7 +86,7 @@ var Player = function (x, y) {
         if(this.x < 0) {
             this.x = 0;
         } else if(this.x > game.levels[game.level].width - 500) {
-            if(game.gos.needtokill > 0) {
+            if(game.gos.needtokill > 0 && !dev) {
                 this.x = game.levels[game.level].width - 500
             } else if(game.level < game.levels.length - 1) {
                 change_screen(5);

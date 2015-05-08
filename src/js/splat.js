@@ -111,23 +111,23 @@ screens = [
                  if (confirm ("WARNING! This will force you to replay the tutorial!")){
 				  change_screen(0);
 				 }
-            } else if(zoneclick(38, 40, 66, 62, x, y) && levelscomplete >= 1) {
+            } else if(zoneclick(38, 40, 66, 62, x, y) && (levelscomplete >= 1 || dev)) {
                 change_screen(1);
                 game.level = 1;
                 game.loadLevel = true;
-            } else if(zoneclick(162, 40, 66, 62, x, y) && levelscomplete >= 2) {
+            } else if(zoneclick(162, 40, 66, 62, x, y) && (levelscomplete >= 2 || dev)) {
                 change_screen(1);
                 game.level = 2;
                 game.loadLevel = true;
-            } else if(zoneclick(281, 40, 66, 62, x, y) && levelscomplete >= 3) {
+            } else if(zoneclick(281, 40, 66, 62, x, y) && (levelscomplete >= 3 || dev)) {
                 change_screen(1);
                 game.level = 3;
                 game.loadLevel = true;
-            } else if(zoneclick(398, 40, 66, 62, x, y) && levelscomplete >= 4) {
+            } else if(zoneclick(398, 40, 66, 62, x, y) && (levelscomplete >= 4 || dev)) {
                 change_screen(1);
                 game.level = 4;
                 game.loadLevel = true;
-            } /*else if(zoneclick(38, 136, 66, 62, x, y) && levelscomplete >= 5) {
+            } /*else if(zoneclick(38, 136, 66, 62, x, y) && (levelscomplete >= 5 || dev)) {
                 change_screen(1);
                 game.level = 5;
                 game.loadLevel = true;
@@ -229,10 +229,22 @@ var mute = function (opt) {
     }
 }
 
+var dmode = function (opt) {
+	dev = opt;
+	if(supports_html5_storage()) {
+        localStorage.dev = opt;
+    }
+}
+
 // Window Onload - Triggered on page load (duh)
 window.onload = function () {
-    if(supports_html5_storage() && localStorage.muted) {
-        muted = JSON.parse(localStorage.muted);
+    if(supports_html5_storage()) {
+		if (localStorage.muted) {
+        	muted = JSON.parse(localStorage.muted);
+		}
+		if (localStorage.dev) {
+        	dev = JSON.parse(localStorage.dev);
+		}
     }
     window.scrollTo(0, 0)
     cv = document.querySelector("#splatvas")
