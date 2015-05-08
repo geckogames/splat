@@ -118,7 +118,7 @@ var Player = function (x, y) {
                 if (hammer){
                     game.gos.objects[0].image = "guy_hammer"
                 } else if (axe){
-                    game.got.objects[0].image = "guyaxe"
+                    game.gos.objects[0].image = "guyaxe"
                 } else {
                     game.gos.objects[0].image = "guy"
                 }

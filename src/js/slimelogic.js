@@ -43,6 +43,14 @@ var slimelogic = {
         var tio = game.gos.objects.indexOf(it);
         if (this.player_intersects(it)) {
             if(iskeydown(keybindings.ATTACK) && !it.unkillable) {
+                if (hammer) {
+                it.health--;
+                it.health--;
+                } else if (axe) {
+                it.health--;
+                it.health--;
+                it.health--;
+                }
                 it.health--;
                 if(it.health == 0) {
                     game.gos.objects.splice(tio, 1);
