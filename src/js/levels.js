@@ -51,6 +51,7 @@ var level_basic = function () {
 		new Tree2(1200, 500 - 256),
         new SlimeBasic(300, 500 - 128),
         new SlimeLearning(400, 500 - 128),
+        new Spikes(400, 500 - 128),
         new SlimeBasic(800, 500 - 128),
         new SlimeBasic(600, 500 - 128),
 		new SlimeBasic(1000, 500 - 128),
@@ -78,6 +79,7 @@ var level_2 = function () {
         new SlimeMutant(600, 500 - 128),
 		new SlimeMutant(1000, 500 - 128),
 		new SlimeMutant(1300, 500 - 128),
+		new Spikes(1100, 500 - 128),
         new NullObject()
     ];
     this.needtokill = 6;
@@ -109,6 +111,7 @@ var level_3 = function () {
         new SlimeSwarm(600, 500 - 128),
 		new SlimeSwarm(1000, 500 - 128),
 		new SlimeSwarm(1300, 500 - 128),
+        new Spikes(1700, 500, -128)
 		new SlimeTrap(3000, 500 - 128),
         new NullObject()
     ];
